@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Elyte Platform</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <meta name="description" content="Login to your Elyte account - passengers, drivers, and administrators">
+</head>
+<body class="auth-page">
+    <!-- Navigation Header -->
+    <header class="navbar auth-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Elyte Logo" class="logo">
+                    <span class="brand-name">Elyte</span>
+                </a>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-content">
+                <div class="auth-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your Elyte account</p>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email Address or Phone Number</label>
+                        <input 
+                            type="text" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email or phone"
+                            required
+                            autocomplete="username"
+                        >
+                        <div class="input-help">
+                            <small>You can use your email address or Ghana phone number (+233...)</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-input">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Enter your password"
+                                required
+                                autocomplete="current-password"
+                            >
+                            <button type="button" class="password-toggle" aria-label="Show password">
+                                👁️
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        
+                        <a href="#" class="forgot-password" id="forgot-password-link">
+                            Forgot Password?
+                        </a>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Sign In
+                        </button>
+                    </div>
+
+                    <!-- Alternative Login Methods -->
+                    <div class="alternative-login">
+                        <div class="divider">
+                            <span>Or continue with</span>
+                        </div>
+                        
+                        <div class="alternative-methods">
+                            <button type="button" class="btn btn-outline btn-social" id="ussd-login">
+                                <img src="images/icons/ussd.svg" alt="USSD">
+                                USSD Login
+                            </button>
+                            
+                            <button type="button" class="btn btn-outline btn-social" id="phone-login">
+                                <img src="images/icons/phone.svg" alt="Phone">
+                                SMS Verification
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- USSD Login Instructions (Hidden by default) -->
+                <div id="ussd-instructions" class="ussd-info hidden">
+                    <h3>Login via USSD</h3>
+                    <div class="ussd-steps">
+                        <p><strong>Step 1:</strong> Dial <code>*920*123*1#</code></p>
+                        <p><strong>Step 2:</strong> Enter your phone number when prompted</p>
+                        <p><strong>Step 3:</strong> Enter your 4-digit PIN</p>
+                        <p><strong>Step 4:</strong> You'll receive an SMS confirmation</p>
+                    </div>
+                    <button type="button" class="btn btn-outline" id="hide-ussd">
+                        Back to Web Login
+                    </button>
+                </div>
+
+                <!-- Account Type Selection -->
+                <div class="account-type-info">
+                    <div class="info-card">
+                        <img src="images/icons/passenger.svg" alt="Passenger">
+                        <div>
+                            <h4>Passenger Account</h4>
+                            <p>Book rides, track drivers, pay with mobile money</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <img src="images/icons/driver.svg" alt="Driver">
+                        <div>
+                            <h4>Driver Account</h4>
+                            <p>Accept rides, earn money, manage your vehicle</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <img src="images/icons/graph.svg" alt="Admin">
+                        <div>
+                            <h4>Admin Account</h4>
+                            <p>Manage fleet, view analytics, oversee operations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign Up Links -->
+                <div class="auth-footer">
+                    <p>Don't have an account?</p>
+                    <div class="signup-links">
+                        <a href="signup-passenger.html" class="btn btn-outline">
+                            Sign Up as Passenger
+                        </a>
+                        <a href="signup-driver.html" class="btn btn-outline">
+                            Sign Up as Driver
+                        </a>
+                    </div>
+                    <div class="admin-signup">
+                        <small>
+                            Business/Fleet owner? 
+                            <a href="signup-admin.html">Create Admin Account</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Image/Info -->
+            <div class="auth-sidebar">
+                <div class="sidebar-content">
+                    <img src="images/urban-traffic.jpg" alt="Ghana Transportation" class="sidebar-image">
+                    <div class="sidebar-overlay">
+                        <div class="sidebar-text">
+                            <h2>Ghana's Most Trusted Ride Platform</h2>
+                            <ul>
+                                <li>✓ 50,000+ satisfied passengers</li>
+                                <li>✓ 500+ verified drivers</li>
+                                <li>✓ Available in 10+ cities</li>
+                                <li>✓ Mobile money integration</li>
+                                <li>✓ USSD access for all phones</li>
+                            </ul>
+                            
+                            <div class="mobile-money-support">
+                                <p>Supported Mobile Money Providers:</p>
+                                <div class="providers">
+                                    <span class="provider mtn">MTN</span>
+                                    <span class="provider vodafone">Vodafone</span>
+                                    <span class="provider airtel">AirtelTigo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Signing you in...</p>
+    </div>
+
+    <!-- Error Messages -->
+    <div id="error-toast" class="toast error hidden">
+        <div class="toast-content">
+            <span class="toast-icon">⚠️</span>
+            <span class="toast-message"></span>
+            <button class="toast-close" aria-label="Close">×</button>
+        </div>
+    </div>
+
+    <!-- Success Messages -->
+    <div id="success-toast" class="toast success hidden">
+        <div class="toast-content">
+            <span class="toast-icon">✅</span>
+            <span class="toast-message"></span>
+            <button class="toast-close" aria-label="Close">×</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="auth-footer-minimal">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Elyte Platform. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="index.html#contact">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/forms.js"></script>
+    
+    <script>
+        // Initialize login functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLogin();
+        });
+    </script>
+</body>
+</html>

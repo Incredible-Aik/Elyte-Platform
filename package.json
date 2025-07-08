@@ -1,0 +1,63 @@
+{
+  "name": "elyte-platform",
+  "version": "1.0.0",
+  "description": "Ghana Ride-Sharing Platform with Mobile Money and USSD Integration",
+  "main": "api/app.js",
+  "scripts": {
+    "start": "node api/app.js",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:ussd\" \"npm run dev:web\"",
+    "dev:api": "cd api && npm run dev",
+    "dev:ussd": "cd ussd-service && npm run dev",
+    "dev:web": "cd web-app && npx http-server -p 3000",
+    "test": "npm run test:api && npm run test:ussd && npm run test:web",
+    "test:api": "cd api && npm test",
+    "test:ussd": "cd ussd-service && npm test",
+    "test:web": "cd tests/web-app && npm test",
+    "build": "npm run build:web",
+    "build:web": "echo 'Web app built successfully'",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up",
+    "docker:down": "docker-compose down",
+    "db:migrate": "psql elyte_platform < database/init.sql",
+    "db:seed": "psql elyte_platform < database/seeds/sample_users.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Incredible-Aik/Elyte-Platform.git"
+  },
+  "keywords": [
+    "ride-sharing",
+    "ghana",
+    "mobile-money",
+    "ussd",
+    "taxi",
+    "transportation",
+    "mtn",
+    "vodafone",
+    "airtel-tigo"
+  ],
+  "author": "Elyte Platform Team",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Incredible-Aik/Elyte-Platform/issues"
+  },
+  "homepage": "https://github.com/Incredible-Aik/Elyte-Platform#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "http-server": "^14.1.1",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
