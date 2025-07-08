@@ -1,0 +1,222 @@
+{
+  "platform": {
+    "name": "Elyte Platform",
+    "description": "Ghana's Premier Ride-Sharing Platform",
+    "version": "1.0.0",
+    "lastUpdated": "2024-01-01"
+  },
+  "users": {
+    "totalPassengers": 50247,
+    "totalDrivers": 1834,
+    "totalAdmins": 12,
+    "activeToday": 8932,
+    "newThisMonth": 3456
+  },
+  "rides": {
+    "totalRides": 127893,
+    "completedRides": 119876,
+    "cancelledRides": 7834,
+    "activeRides": 183,
+    "todayRides": 1247,
+    "averageRating": 4.6,
+    "averageDistance": 8.3,
+    "averageDuration": 23
+  },
+  "revenue": {
+    "totalRevenue": 1847392.50,
+    "platformFee": 277108.88,
+    "driverEarnings": 1570283.62,
+    "todayRevenue": 12847.30,
+    "monthlyRevenue": 187493.20,
+    "currency": "GHS"
+  },
+  "locations": {
+    "topCities": [
+      {
+        "name": "Accra",
+        "rides": 89234,
+        "revenue": 1234567.89,
+        "activeDrivers": 1247
+      },
+      {
+        "name": "Kumasi", 
+        "rides": 23456,
+        "revenue": 345678.90,
+        "activeDrivers": 398
+      },
+      {
+        "name": "Tamale",
+        "rides": 8934,
+        "revenue": 123456.78,
+        "activeDrivers": 156
+      }
+    ],
+    "popularRoutes": [
+      {
+        "from": "Kotoka International Airport",
+        "to": "Accra Central",
+        "rides": 8934,
+        "averageFare": 45.50
+      },
+      {
+        "from": "University of Ghana",
+        "to": "Accra Mall",
+        "rides": 6789,
+        "averageFare": 25.30
+      },
+      {
+        "from": "Kumasi Central Market",
+        "to": "KNUST Campus",
+        "rides": 4567,
+        "averageFare": 18.75
+      }
+    ]
+  },
+  "payments": {
+    "mobileMoneyTransactions": 115678,
+    "cashTransactions": 12215,
+    "totalAmount": 1847392.50,
+    "mobileMoneyBreakdown": {
+      "mtn": {
+        "transactions": 67892,
+        "amount": 1087345.60,
+        "percentage": 58.7
+      },
+      "vodafone": {
+        "transactions": 32187,
+        "amount": 523789.40,
+        "percentage": 27.8
+      },
+      "airteltigo": {
+        "transactions": 15599,
+        "amount": 236257.50,
+        "percentage": 13.5
+      }
+    },
+    "averageTransactionValue": 14.45
+  },
+  "ussd": {
+    "totalSessions": 23456,
+    "completedBookings": 18934,
+    "completionRate": 80.7,
+    "averageSessionDuration": 180,
+    "topCommands": [
+      {
+        "command": "Book Ride",
+        "usage": 15678,
+        "percentage": 66.9
+      },
+      {
+        "command": "Check Balance",
+        "usage": 4567,
+        "percentage": 19.5
+      },
+      {
+        "command": "Ride Status",
+        "usage": 2345,
+        "percentage": 10.0
+      },
+      {
+        "command": "Help",
+        "usage": 866,
+        "percentage": 3.6
+      }
+    ]
+  },
+  "performance": {
+    "averageWaitTime": 4.2,
+    "driverAcceptanceRate": 89.3,
+    "passengerCancellationRate": 6.1,
+    "driverCancellationRate": 4.2,
+    "onTimePerformance": 91.7,
+    "customerSatisfaction": 4.6
+  },
+  "growth": {
+    "monthlyGrowthRate": 12.5,
+    "userAcquisitionCost": 8.75,
+    "customerLifetimeValue": 145.60,
+    "retentionRate": 78.3,
+    "churnRate": 21.7
+  },
+  "demographics": {
+    "passengerAgeGroups": {
+      "18-25": 32.4,
+      "26-35": 41.2,
+      "36-45": 18.7,
+      "46-55": 5.9,
+      "55+": 1.8
+    },
+    "driverAgeGroups": {
+      "21-30": 28.5,
+      "31-40": 45.3,
+      "41-50": 22.1,
+      "51+": 4.1
+    },
+    "genderDistribution": {
+      "passengers": {
+        "male": 58.3,
+        "female": 41.7
+      },
+      "drivers": {
+        "male": 89.2,
+        "female": 10.8
+      }
+    }
+  },
+  "vehicles": {
+    "totalVehicles": 1834,
+    "activeVehicles": 1247,
+    "vehicleTypes": {
+      "sedan": {
+        "count": 892,
+        "percentage": 48.6
+      },
+      "suv": {
+        "count": 456,
+        "percentage": 24.9
+      },
+      "hatchback": {
+        "count": 312,
+        "percentage": 17.0
+      },
+      "pickup": {
+        "count": 174,
+        "percentage": 9.5
+      }
+    },
+    "topBrands": [
+      {
+        "brand": "Toyota",
+        "count": 634,
+        "percentage": 34.6
+      },
+      {
+        "brand": "Hyundai",
+        "count": 298,
+        "percentage": 16.2
+      },
+      {
+        "brand": "Nissan",
+        "count": 267,
+        "percentage": 14.6
+      },
+      {
+        "brand": "Honda",
+        "count": 234,
+        "percentage": 12.8
+      },
+      {
+        "brand": "Kia",
+        "count": 189,
+        "percentage": 10.3
+      }
+    ]
+  },
+  "safety": {
+    "incidentReports": 23,
+    "accidentRate": 0.02,
+    "emergencyResponseTime": 3.5,
+    "backgroundChecksPassed": 98.7,
+    "vehicleInspectionsPassed": 94.3
+  }
+}

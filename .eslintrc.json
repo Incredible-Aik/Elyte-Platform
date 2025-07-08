@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "no-undef": "error"
+  },
+  "globals": {
+    "ELYTE_CONFIG": "readonly",
+    "ElyteUtils": "readonly",
+    "ElyteToast": "readonly",
+    "ElyteLoading": "readonly",
+    "ElyteAPI": "readonly",
+    "ElyteStorage": "readonly",
+    "ElyteFormValidator": "readonly",
+    "AuthManager": "readonly"
+  }
+}

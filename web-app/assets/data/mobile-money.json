@@ -1,0 +1,151 @@
+[
+  {
+    "provider": "mtn",
+    "name": "MTN Mobile Money",
+    "displayName": "MTN MoMo",
+    "code": "MTN",
+    "color": "#FFCB05",
+    "textColor": "#000000",
+    "apiEndpoint": "https://proxy.momoapi.mtn.com",
+    "sandboxEndpoint": "https://sandbox.momodeveloper.mtn.com",
+    "ussdCode": "*170#",
+    "customerServiceCode": "*156#",
+    "features": [
+      "Send Money",
+      "Receive Money", 
+      "Pay Bills",
+      "Buy Airtime",
+      "Merchant Payments",
+      "Bank Transfer"
+    ],
+    "limits": {
+      "dailyLimit": 10000,
+      "transactionLimit": 5000,
+      "currency": "GHS"
+    },
+    "fees": {
+      "sendMoney": {
+        "0-1": 0,
+        "1-5": 0.50,
+        "5-10": 1.00,
+        "10-50": 2.00,
+        "50-100": 3.00,
+        "100-500": 5.00,
+        "500+": "1%"
+      }
+    },
+    "supported": true,
+    "priority": 1
+  },
+  {
+    "provider": "vodafone",
+    "name": "Vodafone Cash",
+    "displayName": "V-Cash",
+    "code": "VOD",
+    "color": "#E60000",
+    "textColor": "#FFFFFF",
+    "apiEndpoint": "https://api.vodafone.com.gh",
+    "sandboxEndpoint": "https://sandbox.vodafone.com.gh",
+    "ussdCode": "*110#",
+    "customerServiceCode": "*100#",
+    "features": [
+      "Send Money",
+      "Receive Money",
+      "Pay Bills",
+      "Buy Airtime",
+      "Merchant Payments",
+      "International Transfer"
+    ],
+    "limits": {
+      "dailyLimit": 10000,
+      "transactionLimit": 5000,
+      "currency": "GHS"
+    },
+    "fees": {
+      "sendMoney": {
+        "0-1": 0,
+        "1-5": 0.50,
+        "5-10": 1.00,
+        "10-50": 2.00,
+        "50-100": 3.00,
+        "100-500": 5.00,
+        "500+": "1%"
+      }
+    },
+    "supported": true,
+    "priority": 2
+  },
+  {
+    "provider": "airteltigo",
+    "name": "AirtelTigo Money",
+    "displayName": "AT Money",
+    "code": "ATL",
+    "color": "#FF6600",
+    "textColor": "#FFFFFF",
+    "apiEndpoint": "https://api.airteltigo.com.gh",
+    "sandboxEndpoint": "https://sandbox.airteltigo.com.gh",
+    "ussdCode": "*115#",
+    "customerServiceCode": "*181#",
+    "features": [
+      "Send Money",
+      "Receive Money",
+      "Pay Bills",
+      "Buy Airtime",
+      "Merchant Payments"
+    ],
+    "limits": {
+      "dailyLimit": 8000,
+      "transactionLimit": 4000,
+      "currency": "GHS"
+    },
+    "fees": {
+      "sendMoney": {
+        "0-1": 0,
+        "1-5": 0.50,
+        "5-10": 1.00,
+        "10-50": 2.00,
+        "50-100": 3.00,
+        "100-500": 5.00,
+        "500+": "1.2%"
+      }
+    },
+    "supported": true,
+    "priority": 3
+  },
+  {
+    "provider": "zeepay",
+    "name": "Zeepay",
+    "displayName": "Zeepay",
+    "code": "ZEE",
+    "color": "#0066CC",
+    "textColor": "#FFFFFF",
+    "apiEndpoint": "https://api.zeepay.co.uk",
+    "sandboxEndpoint": "https://sandbox.zeepay.co.uk",
+    "ussdCode": "*713#",
+    "customerServiceCode": "*713*0#",
+    "features": [
+      "Send Money",
+      "Receive Money",
+      "International Transfer",
+      "Bill Payments"
+    ],
+    "limits": {
+      "dailyLimit": 5000,
+      "transactionLimit": 2500,
+      "currency": "GHS"
+    },
+    "fees": {
+      "sendMoney": {
+        "0-1": 0,
+        "1-5": 0.75,
+        "5-10": 1.25,
+        "10-50": 2.50,
+        "50-100": 3.50,
+        "100-500": 6.00,
+        "500+": "1.5%"
+      }
+    },
+    "supported": false,
+    "priority": 4
+  }
+]

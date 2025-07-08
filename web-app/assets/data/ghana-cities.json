@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Accra",
+    "region": "Greater Accra",
+    "coordinates": {
+      "latitude": 5.6037,
+      "longitude": -0.1870
+    },
+    "population": 2291352,
+    "active": true
+  },
+  {
+    "name": "Kumasi",
+    "region": "Ashanti",
+    "coordinates": {
+      "latitude": 6.6885,
+      "longitude": -1.6244
+    },
+    "population": 3348000,
+    "active": true
+  },
+  {
+    "name": "Tamale",
+    "region": "Northern",
+    "coordinates": {
+      "latitude": 9.4034,
+      "longitude": -0.8424
+    },
+    "population": 371351,
+    "active": true
+  },
+  {
+    "name": "Cape Coast",
+    "region": "Central",
+    "coordinates": {
+      "latitude": 5.1053,
+      "longitude": -1.2466
+    },
+    "population": 169894,
+    "active": true
+  },
+  {
+    "name": "Sekondi-Takoradi",
+    "region": "Western",
+    "coordinates": {
+      "latitude": 4.9340,
+      "longitude": -1.7133
+    },
+    "population": 289212,
+    "active": true
+  },
+  {
+    "name": "Sunyani",
+    "region": "Bono",
+    "coordinates": {
+      "latitude": 7.3387,
+      "longitude": -2.3265
+    },
+    "population": 248496,
+    "active": true
+  },
+  {
+    "name": "Koforidua",
+    "region": "Eastern",
+    "coordinates": {
+      "latitude": 6.0940,
+      "longitude": -0.2640
+    },
+    "population": 183727,
+    "active": true
+  },
+  {
+    "name": "Ho",
+    "region": "Volta",
+    "coordinates": {
+      "latitude": 6.6112,
+      "longitude": 0.4712
+    },
+    "population": 180420,
+    "active": true
+  },
+  {
+    "name": "Bolgatanga",
+    "region": "Upper East",
+    "coordinates": {
+      "latitude": 10.7856,
+      "longitude": -0.8506
+    },
+    "population": 131550,
+    "active": true
+  },
+  {
+    "name": "Wa",
+    "region": "Upper West",
+    "coordinates": {
+      "latitude": 10.0606,
+      "longitude": -2.5067
+    },
+    "population": 124000,
+    "active": true
+  },
+  {
+    "name": "Tarkwa",
+    "region": "Western",
+    "coordinates": {
+      "latitude": 5.3004,
+      "longitude": -1.9990
+    },
+    "population": 56365,
+    "active": false
+  },
+  {
+    "name": "Obuasi",
+    "region": "Ashanti",
+    "coordinates": {
+      "latitude": 6.2028,
+      "longitude": -1.6703
+    },
+    "population": 175043,
+    "active": false
+  }
+]
