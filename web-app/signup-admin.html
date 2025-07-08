@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Signup - Elyte Platform</title>
+    <meta name="description" content="Join the Elyte Platform administration team. Manage operations, support users, and help grow Ghana's ride-hailing platform.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Elyte Platform" class="logo-img">
+                    <span class="logo-text">Elyte</span>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="signup-main">
+        <div class="container">
+            <div class="signup-wrapper">
+                <div class="signup-header">
+                    <h1>Join the Elyte Admin Team</h1>
+                    <p>Help manage and grow Ghana's most inclusive ride-hailing platform</p>
+                </div>
+
+                <div class="signup-container">
+                    <div class="signup-form-section">
+                        <form id="signupForm" class="signup-form" novalidate>
+                            <!-- Personal Information -->
+                            <div class="form-section">
+                                <h3>Personal Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">First Name *</label>
+                                        <input type="text" id="firstName" name="firstName" class="form-input" required
+                                               placeholder="Enter your first name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">Last Name *</label>
+                                        <input type="text" id="lastName" name="lastName" class="form-input" required
+                                               placeholder="Enter your last name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required
+                                           placeholder="Enter your email address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" required
+                                           placeholder="Enter your phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="employeeId" class="form-label">Employee ID *</label>
+                                    <input type="text" id="employeeId" name="employeeId" class="form-input" required
+                                           placeholder="Enter your employee ID">
+                                </div>
+                            </div>
+
+                            <!-- Professional Information -->
+                            <div class="form-section">
+                                <h3>Professional Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="jobTitle" class="form-label">Job Title *</label>
+                                        <input type="text" id="jobTitle" name="jobTitle" class="form-input" required
+                                               placeholder="Enter your job title">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="department" class="form-label">Department *</label>
+                                        <select id="department" name="department" class="form-select" required>
+                                            <option value="">Select department</option>
+                                            <option value="operations">Operations</option>
+                                            <option value="customer-service">Customer Service</option>
+                                            <option value="finance">Finance</option>
+                                            <option value="marketing">Marketing</option>
+                                            <option value="technology">Technology</option>
+                                            <option value="hr">Human Resources</option>
+                                            <option value="legal">Legal & Compliance</option>
+                                            <option value="business-development">Business Development</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="reportingManager" class="form-label">Reporting Manager *</label>
+                                        <input type="text" id="reportingManager" name="reportingManager" class="form-input" required
+                                               placeholder="Enter your reporting manager's name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="startDate" class="form-label">Start Date *</label>
+                                        <input type="date" id="startDate" name="startDate" class="form-input" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="workLocation" class="form-label">Work Location *</label>
+                                    <select id="workLocation" name="workLocation" class="form-select" required>
+                                        <option value="">Select work location</option>
+                                        <option value="accra-hq">Accra - Head Office</option>
+                                        <option value="kumasi-branch">Kumasi - Branch Office</option>
+                                        <option value="tamale-branch">Tamale - Branch Office</option>
+                                        <option value="takoradi-branch">Takoradi - Branch Office</option>
+                                        <option value="remote">Remote</option>
+                                        <option value="field">Field Work</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Role and Permissions -->
+                            <div class="form-section">
+                                <h3>Role and Access Level</h3>
+                                <div class="form-group">
+                                    <label for="adminRole" class="form-label">Admin Role *</label>
+                                    <select id="adminRole" name="adminRole" class="form-select" required>
+                                        <option value="">Select admin role</option>
+                                        <option value="super-admin">Super Admin</option>
+                                        <option value="regional-admin">Regional Admin</option>
+                                        <option value="operations-admin">Operations Admin</option>
+                                        <option value="customer-service-admin">Customer Service Admin</option>
+                                        <option value="finance-admin">Finance Admin</option>
+                                        <option value="support-admin">Support Admin</option>
+                                        <option value="content-admin">Content Admin</option>
+                                        <option value="analytics-admin">Analytics Admin</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="accessLevel" class="form-label">Access Level *</label>
+                                    <select id="accessLevel" name="accessLevel" class="form-select" required>
+                                        <option value="">Select access level</option>
+                                        <option value="full-access">Full Access</option>
+                                        <option value="regional-access">Regional Access</option>
+                                        <option value="department-access">Department Access</option>
+                                        <option value="limited-access">Limited Access</option>
+                                        <option value="read-only">Read Only</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="permissions" class="form-label">Specific Permissions</label>
+                                    <div class="permissions-grid">
+                                        <div class="form-check">
+                                            <input type="checkbox" id="userManagement" name="permissions" value="user-management" class="form-check-input">
+                                            <label for="userManagement" class="form-check-label">User Management</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="driverVerification" name="permissions" value="driver-verification" class="form-check-input">
+                                            <label for="driverVerification" class="form-check-label">Driver Verification</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="financialReports" name="permissions" value="financial-reports" class="form-check-input">
+                                            <label for="financialReports" class="form-check-label">Financial Reports</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="supportTickets" name="permissions" value="support-tickets" class="form-check-input">
+                                            <label for="supportTickets" class="form-check-label">Support Tickets</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="systemSettings" name="permissions" value="system-settings" class="form-check-input">
+                                            <label for="systemSettings" class="form-check-label">System Settings</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="ussdManagement" name="permissions" value="ussd-management" class="form-check-input">
+                                            <label for="ussdManagement" class="form-check-label">USSD Management</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Security Setup -->
+                            <div class="form-section">
+                                <h3>Security Setup</h3>
+                                <div class="form-group">
+                                    <label for="password" class="form-label">Password *</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="password" name="password" class="form-input" required
+                                               placeholder="Create a secure password">
+                                        <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                            <span class="password-toggle-icon">👁️</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required
+                                               placeholder="Confirm your password">
+                                        <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                            <span class="password-toggle-icon">👁️</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="enable2FA" name="enable2FA" class="form-check-input">
+                                        <label for="enable2FA" class="form-check-label">
+                                            Enable Two-Factor Authentication (2FA)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group two-fa-group" style="display: none;">
+                                    <label for="twoFAMethod" class="form-label">2FA Method</label>
+                                    <select id="twoFAMethod" name="twoFAMethod" class="form-select">
+                                        <option value="">Select 2FA method</option>
+                                        <option value="sms">SMS</option>
+                                        <option value="email">Email</option>
+                                        <option value="authenticator">Authenticator App</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="form-section">
+                                <h3>Contact Information</h3>
+                                <div class="form-group">
+                                    <label for="workAddress" class="form-label">Work Address *</label>
+                                    <textarea id="workAddress" name="workAddress" class="form-textarea" rows="3" required
+                                              placeholder="Enter your work address"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="workPhone" class="form-label">Work Phone</label>
+                                        <input type="tel" id="workPhone" name="workPhone" class="form-input"
+                                               placeholder="Enter your work phone number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="extension" class="form-label">Extension</label>
+                                        <input type="text" id="extension" name="extension" class="form-input"
+                                               placeholder="Enter phone extension">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="emergencyContact" class="form-label">Emergency Contact *</label>
+                                    <input type="text" id="emergencyContact" name="emergencyContact" class="form-input" required
+                                           placeholder="Enter emergency contact name and phone">
+                                </div>
+                            </div>
+
+                            <!-- Background and Experience -->
+                            <div class="form-section">
+                                <h3>Background and Experience</h3>
+                                <div class="form-group">
+                                    <label for="education" class="form-label">Highest Education Level *</label>
+                                    <select id="education" name="education" class="form-select" required>
+                                        <option value="">Select education level</option>
+                                        <option value="high-school">High School</option>
+                                        <option value="diploma">Diploma</option>
+                                        <option value="bachelor">Bachelor's Degree</option>
+                                        <option value="master">Master's Degree</option>
+                                        <option value="phd">PhD</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="experience" class="form-label">Relevant Experience *</label>
+                                    <textarea id="experience" name="experience" class="form-textarea" rows="4" required
+                                              placeholder="Describe your relevant work experience"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="languages" class="form-label">Languages Spoken *</label>
+                                    <div class="languages-grid">
+                                        <div class="form-check">
+                                            <input type="checkbox" id="english" name="languages" value="english" class="form-check-input" required>
+                                            <label for="english" class="form-check-label">English</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="twi" name="languages" value="twi" class="form-check-input">
+                                            <label for="twi" class="form-check-label">Twi</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="ga" name="languages" value="ga" class="form-check-input">
+                                            <label for="ga" class="form-check-label">Ga</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="ewe" name="languages" value="ewe" class="form-check-input">
+                                            <label for="ewe" class="form-check-label">Ewe</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="dagbani" name="languages" value="dagbani" class="form-check-input">
+                                            <label for="dagbani" class="form-check-label">Dagbani</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="french" name="languages" value="french" class="form-check-input">
+                                            <label for="french" class="form-check-label">French</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- System Access -->
+                            <div class="form-section">
+                                <h3>System Access Requirements</h3>
+                                <div class="form-group">
+                                    <label for="deviceType" class="form-label">Primary Device Type *</label>
+                                    <select id="deviceType" name="deviceType" class="form-select" required>
+                                        <option value="">Select device type</option>
+                                        <option value="desktop">Desktop Computer</option>
+                                        <option value="laptop">Laptop</option>
+                                        <option value="tablet">Tablet</option>
+                                        <option value="mobile">Mobile Phone</option>
+                                        <option value="multiple">Multiple Devices</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="internetAccess" class="form-label">Internet Access *</label>
+                                    <select id="internetAccess" name="internetAccess" class="form-select" required>
+                                        <option value="">Select internet access</option>
+                                        <option value="high-speed">High-Speed Broadband</option>
+                                        <option value="mobile-data">Mobile Data</option>
+                                        <option value="shared-connection">Shared Connection</option>
+                                        <option value="limited">Limited Connection</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="mobileAccess" name="mobileAccess" class="form-check-input">
+                                        <label for="mobileAccess" class="form-check-label">
+                                            I need mobile access to the admin system
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="form-section">
+                                <h3>Terms and Conditions</h3>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeTerms" name="agreeTerms" class="form-check-input" required>
+                                        <label for="agreeTerms" class="form-check-label">
+                                            I agree to the <a href="#admin-terms">Admin Terms and Conditions</a> and <a href="#privacy">Privacy Policy</a> *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeConfidentiality" name="agreeConfidentiality" class="form-check-input" required>
+                                        <label for="agreeConfidentiality" class="form-check-label">
+                                            I agree to maintain confidentiality of all platform data and user information *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeCode" name="agreeCode" class="form-check-input" required>
+                                        <label for="agreeCode" class="form-check-label">
+                                            I agree to follow the <a href="#code-of-conduct">Code of Conduct</a> and ethical guidelines *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeTraining" name="agreeTraining" class="form-check-input">
+                                        <label for="agreeTraining" class="form-check-label">
+                                            I agree to participate in required training programs and updates
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-large btn-full-width">
+                                    Submit Admin Application
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="signup-info-section">
+                        <div class="signup-benefits">
+                            <h3>Admin Responsibilities</h3>
+                            <ul class="benefits-list">
+                                <li>
+                                    <span class="benefit-icon">👥</span>
+                                    <div class="benefit-content">
+                                        <h4>User Management</h4>
+                                        <p>Manage passenger and driver accounts, verifications, and support</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">📊</span>
+                                    <div class="benefit-content">
+                                        <h4>Analytics & Reports</h4>
+                                        <p>Monitor platform performance and generate business reports</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">🛡️</span>
+                                    <div class="benefit-content">
+                                        <h4>Safety & Security</h4>
+                                        <p>Ensure platform safety and handle security incidents</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">💰</span>
+                                    <div class="benefit-content">
+                                        <h4>Financial Oversight</h4>
+                                        <p>Monitor transactions, payouts, and financial operations</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">📱</span>
+                                    <div class="benefit-content">
+                                        <h4>USSD Management</h4>
+                                        <p>Manage offline services and USSD system operations</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">🎯</span>
+                                    <div class="benefit-content">
+                                        <h4>Platform Growth</h4>
+                                        <p>Support platform expansion and improvement initiatives</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="admin-levels">
+                            <h3>Admin Levels</h3>
+                            <div class="admin-level">
+                                <h4>Super Admin</h4>
+                                <p>Full system access and control</p>
+                            </div>
+                            <div class="admin-level">
+                                <h4>Regional Admin</h4>
+                                <p>Regional operations management</p>
+                            </div>
+                            <div class="admin-level">
+                                <h4>Department Admin</h4>
+                                <p>Department-specific operations</p>
+                            </div>
+                            <div class="admin-level">
+                                <h4>Support Admin</h4>
+                                <p>Customer support and tickets</p>
+                            </div>
+                        </div>
+
+                        <div class="signup-help">
+                            <h3>Need Help?</h3>
+                            <div class="help-options">
+                                <div class="help-option">
+                                    <span class="help-icon">📞</span>
+                                    <div class="help-content">
+                                        <h4>HR Support</h4>
+                                        <p>+233 XX XXX XXXX</p>
+                                    </div>
+                                </div>
+                                <div class="help-option">
+                                    <span class="help-icon">📧</span>
+                                    <div class="help-content">
+                                        <h4>Admin Support</h4>
+                                        <p>admin@elyte.com.gh</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="auth-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="login.html">Already have an account? Login</a>
+                    <a href="signup-passenger.html">Sign up as Passenger</a>
+                    <a href="signup-driver.html">Sign up as Driver</a>
+                    <a href="index.html#privacy">Privacy Policy</a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2024 Elyte Platform. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // 2FA toggle
+        document.getElementById('enable2FA').addEventListener('change', function() {
+            const twoFAGroup = document.querySelector('.two-fa-group');
+            if (this.checked) {
+                twoFAGroup.style.display = 'block';
+                document.getElementById('twoFAMethod').required = true;
+            } else {
+                twoFAGroup.style.display = 'none';
+                document.getElementById('twoFAMethod').required = false;
+                document.getElementById('twoFAMethod').value = '';
+            }
+        });
+
+        // Language validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageCheckboxes = document.querySelectorAll('input[name="languages"]');
+            const form = document.getElementById('signupForm');
+            
+            form.addEventListener('submit', function(e) {
+                const isChecked = Array.from(languageCheckboxes).some(cb => cb.checked);
+                if (!isChecked) {
+                    e.preventDefault();
+                    alert('Please select at least one language');
+                    languageCheckboxes[0].focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

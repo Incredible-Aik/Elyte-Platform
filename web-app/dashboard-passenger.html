@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Dashboard - Elyte Platform</title>
+    <meta name="description" content="Manage your rides, payments, and settings on the Elyte Platform passenger dashboard.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Elyte Platform" class="logo-img">
+                    <span class="logo-text">Elyte</span>
+                </div>
+                <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <div class="user-profile">
+                    <div class="profile-avatar">
+                        <span class="avatar-initials">JD</span>
+                    </div>
+                    <div class="profile-info">
+                        <h4 class="profile-name">John Doe</h4>
+                        <p class="profile-role">Passenger</p>
+                    </div>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#book-ride" class="nav-link">
+                            <span class="nav-icon">🚗</span>
+                            <span class="nav-text">Book Ride</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#current-ride" class="nav-link">
+                            <span class="nav-icon">📍</span>
+                            <span class="nav-text">Current Ride</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#ride-history" class="nav-link">
+                            <span class="nav-icon">📋</span>
+                            <span class="nav-text">Ride History</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#payments" class="nav-link">
+                            <span class="nav-icon">💳</span>
+                            <span class="nav-text">Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#favorites" class="nav-link">
+                            <span class="nav-icon">⭐</span>
+                            <span class="nav-text">Favorites</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#ussd-settings" class="nav-link">
+                            <span class="nav-icon">📱</span>
+                            <span class="nav-text">USSD Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profile" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#support" class="nav-link">
+                            <span class="nav-icon">🆘</span>
+                            <span class="nav-text">Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 class="page-title">Dashboard</h1>
+                    <p class="page-subtitle">Welcome back, John! Ready for your next ride?</p>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-primary" onclick="showSection('book-ride')">
+                            <span class="btn-icon">🚗</span>
+                            Book Ride
+                        </button>
+                        <div class="notification-badge">
+                            <span class="badge-icon">🔔</span>
+                            <span class="badge-count">3</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Dashboard Overview -->
+                <section id="dashboard" class="content-section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">🚗</div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">24</h3>
+                                <p class="stat-label">Total Rides</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💰</div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">GHS 450</h3>
+                                <p class="stat-label">Total Spent</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⭐</div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">4.8</h3>
+                                <p class="stat-label">Your Rating</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📱</div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">GHS 125</h3>
+                                <p class="stat-label">Wallet Balance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Quick Actions</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="quick-actions">
+                                    <button class="quick-action-btn" onclick="showSection('book-ride')">
+                                        <span class="action-icon">🚗</span>
+                                        <span class="action-text">Book Ride</span>
+                                    </button>
+                                    <button class="quick-action-btn" onclick="showSection('current-ride')">
+                                        <span class="action-icon">📍</span>
+                                        <span class="action-text">Track Ride</span>
+                                    </button>
+                                    <button class="quick-action-btn" onclick="showSection('payments')">
+                                        <span class="action-icon">💳</span>
+                                        <span class="action-text">Add Payment</span>
+                                    </button>
+                                    <button class="quick-action-btn" onclick="showSection('ussd-settings')">
+                                        <span class="action-icon">📱</span>
+                                        <span class="action-text">USSD Setup</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Recent Rides</h3>
+                                <a href="#ride-history" class="view-all-link">View All</a>
+                            </div>
+                            <div class="card-content">
+                                <div class="ride-list">
+                                    <div class="ride-item">
+                                        <div class="ride-info">
+                                            <div class="ride-route">
+                                                <span class="pickup">East Legon</span>
+                                                <span class="separator">→</span>
+                                                <span class="destination">Accra Mall</span>
+                                            </div>
+                                            <div class="ride-details">
+                                                <span class="ride-date">Today, 2:30 PM</span>
+                                                <span class="ride-cost">GHS 25</span>
+                                            </div>
+                                        </div>
+                                        <div class="ride-status completed">Completed</div>
+                                    </div>
+                                    <div class="ride-item">
+                                        <div class="ride-info">
+                                            <div class="ride-route">
+                                                <span class="pickup">Accra Mall</span>
+                                                <span class="separator">→</span>
+                                                <span class="destination">Kotoka Airport</span>
+                                            </div>
+                                            <div class="ride-details">
+                                                <span class="ride-date">Yesterday, 6:15 AM</span>
+                                                <span class="ride-cost">GHS 35</span>
+                                            </div>
+                                        </div>
+                                        <div class="ride-status completed">Completed</div>
+                                    </div>
+                                    <div class="ride-item">
+                                        <div class="ride-info">
+                                            <div class="ride-route">
+                                                <span class="pickup">Osu</span>
+                                                <span class="separator">→</span>
+                                                <span class="destination">Tema</span>
+                                            </div>
+                                            <div class="ride-details">
+                                                <span class="ride-date">Dec 5, 4:45 PM</span>
+                                                <span class="ride-cost">GHS 45</span>
+                                            </div>
+                                        </div>
+                                        <div class="ride-status completed">Completed</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Favorite Locations</h3>
+                                <button class="add-favorite-btn" onclick="showSection('favorites')">+ Add</button>
+                            </div>
+                            <div class="card-content">
+                                <div class="favorite-locations">
+                                    <div class="location-item">
+                                        <span class="location-icon">🏠</span>
+                                        <div class="location-info">
+                                            <h4>Home</h4>
+                                            <p>East Legon, Accra</p>
+                                        </div>
+                                    </div>
+                                    <div class="location-item">
+                                        <span class="location-icon">🏢</span>
+                                        <div class="location-info">
+                                            <h4>Work</h4>
+                                            <p>Osu, Accra</p>
+                                        </div>
+                                    </div>
+                                    <div class="location-item">
+                                        <span class="location-icon">🛒</span>
+                                        <div class="location-info">
+                                            <h4>Shopping</h4>
+                                            <p>Accra Mall</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>USSD Quick Access</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="ussd-info">
+                                    <div class="ussd-code">
+                                        <span class="ussd-label">Quick Book:</span>
+                                        <span class="ussd-number">*920*1#</span>
+                                    </div>
+                                    <div class="ussd-code">
+                                        <span class="ussd-label">Check Ride:</span>
+                                        <span class="ussd-number">*920*2#</span>
+                                    </div>
+                                    <div class="ussd-code">
+                                        <span class="ussd-label">Balance:</span>
+                                        <span class="ussd-number">*920*3#</span>
+                                    </div>
+                                </div>
+                                <p class="ussd-note">Use these codes on any phone to access Elyte services</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Book Ride Section -->
+                <section id="book-ride" class="content-section">
+                    <div class="section-header">
+                        <h2>Book a Ride</h2>
+                        <p>Enter your pickup and destination to find available drivers</p>
+                    </div>
+                    <div class="book-ride-container">
+                        <div class="booking-form">
+                            <form id="bookRideForm">
+                                <div class="form-group">
+                                    <label for="pickupLocation" class="form-label">Pickup Location</label>
+                                    <input type="text" id="pickupLocation" class="form-input" placeholder="Enter pickup location">
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination" class="form-label">Destination</label>
+                                    <input type="text" id="destination" class="form-input" placeholder="Enter destination">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rideType" class="form-label">Ride Type</label>
+                                    <select id="rideType" class="form-select">
+                                        <option value="standard">Standard</option>
+                                        <option value="premium">Premium</option>
+                                        <option value="shared">Shared</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="scheduledTime" class="form-label">Schedule (Optional)</label>
+                                    <input type="datetime-local" id="scheduledTime" class="form-input">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-large">Find Driver</button>
+                            </form>
+                        </div>
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <p>🗺️ Interactive Map</p>
+                                <p>Map integration will show your location and nearby drivers</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Current Ride Section -->
+                <section id="current-ride" class="content-section">
+                    <div class="section-header">
+                        <h2>Current Ride</h2>
+                        <p>Track your ongoing ride in real-time</p>
+                    </div>
+                    <div class="current-ride-container">
+                        <div class="no-current-ride">
+                            <div class="empty-state">
+                                <span class="empty-icon">🚗</span>
+                                <h3>No Active Ride</h3>
+                                <p>You don't have any active rides at the moment</p>
+                                <button class="btn btn-primary" onclick="showSection('book-ride')">Book a Ride</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ride History Section -->
+                <section id="ride-history" class="content-section">
+                    <div class="section-header">
+                        <h2>Ride History</h2>
+                        <p>View all your past rides and download receipts</p>
+                    </div>
+                    <div class="ride-history-container">
+                        <div class="history-filters">
+                            <div class="filter-group">
+                                <label for="dateRange">Date Range:</label>
+                                <select id="dateRange" class="form-select">
+                                    <option value="all">All Time</option>
+                                    <option value="week">This Week</option>
+                                    <option value="month">This Month</option>
+                                    <option value="year">This Year</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="rideStatus">Status:</label>
+                                <select id="rideStatus" class="form-select">
+                                    <option value="all">All</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ride-history-list">
+                            <!-- Ride history items will be populated here -->
+                            <div class="ride-history-item">
+                                <div class="ride-details">
+                                    <div class="ride-route">
+                                        <span class="pickup">East Legon</span>
+                                        <span class="separator">→</span>
+                                        <span class="destination">Accra Mall</span>
+                                    </div>
+                                    <div class="ride-info">
+                                        <span class="ride-date">Dec 8, 2024 - 2:30 PM</span>
+                                        <span class="ride-driver">Driver: Kwame Asante</span>
+                                    </div>
+                                </div>
+                                <div class="ride-summary">
+                                    <div class="ride-cost">GHS 25.00</div>
+                                    <div class="ride-status completed">Completed</div>
+                                    <button class="btn btn-small btn-outline">Receipt</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payments Section -->
+                <section id="payments" class="content-section">
+                    <div class="section-header">
+                        <h2>Payment Methods</h2>
+                        <p>Manage your payment methods and wallet balance</p>
+                    </div>
+                    <div class="payments-container">
+                        <div class="wallet-balance">
+                            <div class="balance-card">
+                                <h3>Wallet Balance</h3>
+                                <div class="balance-amount">GHS 125.50</div>
+                                <button class="btn btn-primary">Top Up</button>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <h3>Payment Methods</h3>
+                            <div class="payment-method-list">
+                                <div class="payment-method">
+                                    <span class="payment-icon">📱</span>
+                                    <div class="payment-info">
+                                        <h4>MTN Mobile Money</h4>
+                                        <p>**** **** **34</p>
+                                    </div>
+                                    <span class="payment-status active">Active</span>
+                                </div>
+                                <div class="payment-method">
+                                    <span class="payment-icon">💳</span>
+                                    <div class="payment-info">
+                                        <h4>Vodafone Cash</h4>
+                                        <p>**** **** **56</p>
+                                    </div>
+                                    <span class="payment-status">Inactive</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Add Payment Method</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Support Section -->
+                <section id="support" class="content-section">
+                    <div class="section-header">
+                        <h2>Support</h2>
+                        <p>Get help with your Elyte experience</p>
+                    </div>
+                    <div class="support-container">
+                        <div class="support-options">
+                            <div class="support-option">
+                                <span class="support-icon">📞</span>
+                                <h3>Call Support</h3>
+                                <p>+233 XX XXX XXXX</p>
+                                <p>24/7 Emergency Support</p>
+                            </div>
+                            <div class="support-option">
+                                <span class="support-icon">💬</span>
+                                <h3>Live Chat</h3>
+                                <p>Chat with our support team</p>
+                                <button class="btn btn-primary">Start Chat</button>
+                            </div>
+                            <div class="support-option">
+                                <span class="support-icon">📧</span>
+                                <h3>Email Support</h3>
+                                <p>support@elyte.com.gh</p>
+                                <p>Response within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

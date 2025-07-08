@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Signup - Elyte Platform</title>
+    <meta name="description" content="Join Elyte as a driver. Earn money on your schedule with flexible hours and multi-platform access across Ghana.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Elyte Platform" class="logo-img">
+                    <span class="logo-text">Elyte</span>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="signup-main">
+        <div class="container">
+            <div class="signup-wrapper">
+                <div class="signup-header">
+                    <h1>Become an Elyte Driver</h1>
+                    <p>Join thousands of drivers earning money on their schedule</p>
+                </div>
+
+                <div class="signup-container">
+                    <div class="signup-form-section">
+                        <form id="signupForm" class="signup-form" novalidate>
+                            <!-- Personal Information -->
+                            <div class="form-section">
+                                <h3>Personal Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">First Name *</label>
+                                        <input type="text" id="firstName" name="firstName" class="form-input" required
+                                               placeholder="Enter your first name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">Last Name *</label>
+                                        <input type="text" id="lastName" name="lastName" class="form-input" required
+                                               placeholder="Enter your last name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required
+                                           placeholder="Enter your email address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" required
+                                           placeholder="Enter your phone number">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="dateOfBirth" class="form-label">Date of Birth *</label>
+                                        <input type="date" id="dateOfBirth" name="dateOfBirth" class="form-input" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender" class="form-label">Gender</label>
+                                        <select id="gender" name="gender" class="form-select">
+                                            <option value="">Select gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                            <option value="prefer-not-to-say">Prefer not to say</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address" class="form-label">Current Address *</label>
+                                    <textarea id="address" name="address" class="form-textarea" rows="3" required
+                                              placeholder="Enter your current address"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Driver's License Information -->
+                            <div class="form-section">
+                                <h3>Driver's License Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="licenseNumber" class="form-label">License Number *</label>
+                                        <input type="text" id="licenseNumber" name="licenseNumber" class="form-input" required
+                                               placeholder="Enter your license number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="licenseExpiry" class="form-label">License Expiry Date *</label>
+                                        <input type="date" id="licenseExpiry" name="licenseExpiry" class="form-input" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="licenseClass" class="form-label">License Class *</label>
+                                        <select id="licenseClass" name="licenseClass" class="form-select" required>
+                                            <option value="">Select license class</option>
+                                            <option value="class-c">Class C (Private)</option>
+                                            <option value="class-d">Class D (Commercial)</option>
+                                            <option value="class-e">Class E (Heavy Commercial)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="yearsExperience" class="form-label">Years of Driving Experience *</label>
+                                        <select id="yearsExperience" name="yearsExperience" class="form-select" required>
+                                            <option value="">Select experience</option>
+                                            <option value="1-2">1-2 years</option>
+                                            <option value="3-5">3-5 years</option>
+                                            <option value="6-10">6-10 years</option>
+                                            <option value="10+">10+ years</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="licensePhoto" class="form-label">Upload License Photo *</label>
+                                    <div class="file-upload-container">
+                                        <input type="file" id="licensePhoto" name="licensePhoto" class="file-upload-input" 
+                                               accept="image/*" required>
+                                        <div class="file-upload-button">
+                                            <span class="file-upload-icon">📷</span>
+                                            <span class="file-upload-text">Click to upload license photo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Vehicle Information -->
+                            <div class="form-section">
+                                <h3>Vehicle Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="vehicleMake" class="form-label">Vehicle Make *</label>
+                                        <select id="vehicleMake" name="vehicleMake" class="form-select" required>
+                                            <option value="">Select make</option>
+                                            <option value="toyota">Toyota</option>
+                                            <option value="nissan">Nissan</option>
+                                            <option value="hyundai">Hyundai</option>
+                                            <option value="kia">Kia</option>
+                                            <option value="honda">Honda</option>
+                                            <option value="ford">Ford</option>
+                                            <option value="volkswagen">Volkswagen</option>
+                                            <option value="peugeot">Peugeot</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vehicleModel" class="form-label">Vehicle Model *</label>
+                                        <input type="text" id="vehicleModel" name="vehicleModel" class="form-input" required
+                                               placeholder="Enter vehicle model">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="vehicleYear" class="form-label">Year *</label>
+                                        <input type="number" id="vehicleYear" name="vehicleYear" class="form-input" 
+                                               min="2000" max="2024" required placeholder="Enter year">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vehicleColor" class="form-label">Color *</label>
+                                        <input type="text" id="vehicleColor" name="vehicleColor" class="form-input" required
+                                               placeholder="Enter vehicle color">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="plateNumber" class="form-label">Plate Number *</label>
+                                        <input type="text" id="plateNumber" name="plateNumber" class="form-input" required
+                                               placeholder="Enter plate number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="seatingCapacity" class="form-label">Seating Capacity *</label>
+                                        <select id="seatingCapacity" name="seatingCapacity" class="form-select" required>
+                                            <option value="">Select capacity</option>
+                                            <option value="4">4 passengers</option>
+                                            <option value="5">5 passengers</option>
+                                            <option value="6">6 passengers</option>
+                                            <option value="7">7 passengers</option>
+                                            <option value="8">8 passengers</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehiclePhotos" class="form-label">Vehicle Photos *</label>
+                                    <div class="file-upload-container">
+                                        <input type="file" id="vehiclePhotos" name="vehiclePhotos" class="file-upload-input" 
+                                               accept="image/*" multiple required>
+                                        <div class="file-upload-button">
+                                            <span class="file-upload-icon">📸</span>
+                                            <span class="file-upload-text">Upload vehicle photos (front, back, interior)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Vehicle Documents -->
+                            <div class="form-section">
+                                <h3>Vehicle Documents</h3>
+                                <div class="form-group">
+                                    <label for="insurance" class="form-label">Insurance Certificate *</label>
+                                    <div class="file-upload-container">
+                                        <input type="file" id="insurance" name="insurance" class="file-upload-input" 
+                                               accept="image/*,application/pdf" required>
+                                        <div class="file-upload-button">
+                                            <span class="file-upload-icon">📄</span>
+                                            <span class="file-upload-text">Upload insurance certificate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="roadworthy" class="form-label">Roadworthy Certificate *</label>
+                                    <div class="file-upload-container">
+                                        <input type="file" id="roadworthy" name="roadworthy" class="file-upload-input" 
+                                               accept="image/*,application/pdf" required>
+                                        <div class="file-upload-button">
+                                            <span class="file-upload-icon">🛡️</span>
+                                            <span class="file-upload-text">Upload roadworthy certificate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehicleRegistration" class="form-label">Vehicle Registration *</label>
+                                    <div class="file-upload-container">
+                                        <input type="file" id="vehicleRegistration" name="vehicleRegistration" class="file-upload-input" 
+                                               accept="image/*,application/pdf" required>
+                                        <div class="file-upload-button">
+                                            <span class="file-upload-icon">📋</span>
+                                            <span class="file-upload-text">Upload vehicle registration</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Banking Information -->
+                            <div class="form-section">
+                                <h3>Banking Information</h3>
+                                <div class="form-group">
+                                    <label class="form-label">Preferred Payment Method for Earnings *</label>
+                                    <div class="payment-methods">
+                                        <div class="form-check">
+                                            <input type="radio" id="mtnMoney" name="paymentMethod" value="mtn-money" class="form-check-input" required>
+                                            <label for="mtnMoney" class="form-check-label">
+                                                <span class="payment-icon">📱</span> MTN Mobile Money
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" id="vodafoneCash" name="paymentMethod" value="vodafone-cash" class="form-check-input" required>
+                                            <label for="vodafoneCash" class="form-check-label">
+                                                <span class="payment-icon">💳</span> Vodafone Cash
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" id="airtelTigo" name="paymentMethod" value="airteltigo-money" class="form-check-input" required>
+                                            <label for="airtelTigo" class="form-check-label">
+                                                <span class="payment-icon">💰</span> AirtelTigo Money
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" id="bankAccount" name="paymentMethod" value="bank-account" class="form-check-input" required>
+                                            <label for="bankAccount" class="form-check-label">
+                                                <span class="payment-icon">🏦</span> Bank Account
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="paymentDetails" class="form-label">Payment Details *</label>
+                                    <input type="text" id="paymentDetails" name="paymentDetails" class="form-input" required
+                                           placeholder="Enter mobile money number or bank account details">
+                                </div>
+                            </div>
+
+                            <!-- Multi-Platform Preferences -->
+                            <div class="form-section">
+                                <h3>Multi-Platform Preferences</h3>
+                                <div class="form-group">
+                                    <label class="form-label">Which platforms would you like to work on? *</label>
+                                    <div class="platform-options">
+                                        <div class="form-check">
+                                            <input type="checkbox" id="elyteOnly" name="platforms" value="elyte-only" class="form-check-input" required>
+                                            <label for="elyteOnly" class="form-check-label">
+                                                <span class="platform-icon">🌟</span> Elyte Platform Only
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="multiPlatform" name="platforms" value="multi-platform" class="form-check-input">
+                                            <label for="multiPlatform" class="form-check-label">
+                                                <span class="platform-icon">🌐</span> Multiple Platforms (Elyte + Others)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="workingHours" class="form-label">Preferred Working Hours</label>
+                                    <select id="workingHours" name="workingHours" class="form-select">
+                                        <option value="">Select preferred hours</option>
+                                        <option value="full-time">Full-time (8+ hours/day)</option>
+                                        <option value="part-time">Part-time (4-8 hours/day)</option>
+                                        <option value="weekends">Weekends only</option>
+                                        <option value="flexible">Flexible schedule</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Profile Photo -->
+                            <div class="form-section">
+                                <h3>Profile Photo</h3>
+                                <div class="form-group">
+                                    <label for="profilePhoto" class="form-label">Driver Profile Photo *</label>
+                                    <div class="file-upload-container">
+                                        <input type="file" id="profilePhoto" name="profilePhoto" class="file-upload-input" 
+                                               accept="image/*" required>
+                                        <div class="file-upload-button">
+                                            <span class="file-upload-icon">👤</span>
+                                            <span class="file-upload-text">Upload your profile photo</span>
+                                        </div>
+                                    </div>
+                                    <small class="form-help">Clear photo of your face for passenger recognition</small>
+                                </div>
+                            </div>
+
+                            <!-- Background Check Consent -->
+                            <div class="form-section">
+                                <h3>Background Check & Verification</h3>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="backgroundCheck" name="backgroundCheck" class="form-check-input" required>
+                                        <label for="backgroundCheck" class="form-check-label">
+                                            I consent to a background check and verification process *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="criminalRecord" name="criminalRecord" class="form-check-input" required>
+                                        <label for="criminalRecord" class="form-check-label">
+                                            I confirm that I have no criminal record related to driving or passenger safety *
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Account Security -->
+                            <div class="form-section">
+                                <h3>Account Security</h3>
+                                <div class="form-group">
+                                    <label for="password" class="form-label">Password *</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="password" name="password" class="form-input" required
+                                               placeholder="Create a secure password">
+                                        <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                            <span class="password-toggle-icon">👁️</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required
+                                               placeholder="Confirm your password">
+                                        <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                            <span class="password-toggle-icon">👁️</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="form-section">
+                                <h3>Terms and Conditions</h3>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeTerms" name="agreeTerms" class="form-check-input" required>
+                                        <label for="agreeTerms" class="form-check-label">
+                                            I agree to the <a href="#driver-terms">Driver Terms and Conditions</a> and <a href="#privacy">Privacy Policy</a> *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeCommission" name="agreeCommission" class="form-check-input" required>
+                                        <label for="agreeCommission" class="form-check-label">
+                                            I understand and agree to the commission structure and payment terms *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeMarketing" name="agreeMarketing" class="form-check-input">
+                                        <label for="agreeMarketing" class="form-check-label">
+                                            I agree to receive marketing communications and driver updates
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-large btn-full-width">
+                                    Submit Driver Application
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="signup-info-section">
+                        <div class="signup-benefits">
+                            <h3>Why Drive with Elyte?</h3>
+                            <ul class="benefits-list">
+                                <li>
+                                    <span class="benefit-icon">💰</span>
+                                    <div class="benefit-content">
+                                        <h4>Competitive Earnings</h4>
+                                        <p>Earn up to GHS 200+ per day with competitive commission rates</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">⏰</span>
+                                    <div class="benefit-content">
+                                        <h4>Flexible Schedule</h4>
+                                        <p>Work when you want - full-time, part-time, or weekends only</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">🌐</span>
+                                    <div class="benefit-content">
+                                        <h4>Multi-Platform Access</h4>
+                                        <p>Work across multiple platforms through one account</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">🛡️</span>
+                                    <div class="benefit-content">
+                                        <h4>Insurance Coverage</h4>
+                                        <p>Additional insurance coverage while driving on platform</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">📱</span>
+                                    <div class="benefit-content">
+                                        <h4>Easy Payments</h4>
+                                        <p>Weekly payouts directly to your mobile money or bank account</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">🎯</span>
+                                    <div class="benefit-content">
+                                        <h4>Driver Support</h4>
+                                        <p>24/7 driver support and regular training opportunities</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="requirements-section">
+                            <h3>Requirements</h3>
+                            <ul class="requirements-list">
+                                <li>Valid Ghana driver's license</li>
+                                <li>Minimum 2 years driving experience</li>
+                                <li>Vehicle manufactured 2010 or newer</li>
+                                <li>Valid vehicle insurance</li>
+                                <li>Current roadworthy certificate</li>
+                                <li>Clean driving record</li>
+                                <li>Android 5.0+ or iOS 10+ smartphone</li>
+                            </ul>
+                        </div>
+
+                        <div class="signup-help">
+                            <h3>Need Help?</h3>
+                            <div class="help-options">
+                                <div class="help-option">
+                                    <span class="help-icon">📞</span>
+                                    <div class="help-content">
+                                        <h4>Driver Support</h4>
+                                        <p>+233 XX XXX XXXX</p>
+                                    </div>
+                                </div>
+                                <div class="help-option">
+                                    <span class="help-icon">📧</span>
+                                    <div class="help-content">
+                                        <h4>Email Support</h4>
+                                        <p>drivers@elyte.com.gh</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="auth-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="login.html">Already have an account? Login</a>
+                    <a href="signup-passenger.html">Sign up as Passenger</a>
+                    <a href="index.html#privacy">Privacy Policy</a>
+                    <a href="index.html#terms">Terms of Service</a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2024 Elyte Platform. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

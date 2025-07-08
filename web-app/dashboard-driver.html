@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard - Elyte Platform</title>
+    <meta name="description" content="Manage your rides, earnings, and vehicle on the Elyte Platform driver dashboard.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Elyte Platform" class="logo-img">
+                    <span class="logo-text">Elyte</span>
+                </div>
+                <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <div class="user-profile">
+                    <div class="profile-avatar">
+                        <span class="avatar-initials">KA</span>
+                    </div>
+                    <div class="profile-info">
+                        <h4 class="profile-name">Kwame Asante</h4>
+                        <p class="profile-role">Driver</p>
+                    </div>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#go-online" class="nav-link">
+                            <span class="nav-icon">🟢</span>
+                            <span class="nav-text">Go Online</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#ride-requests" class="nav-link">
+                            <span class="nav-icon">📱</span>
+                            <span class="nav-text">Ride Requests</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#current-ride" class="nav-link">
+                            <span class="nav-icon">🚗</span>
+                            <span class="nav-text">Current Ride</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#earnings" class="nav-link">
+                            <span class="nav-icon">💰</span>
+                            <span class="nav-text">Earnings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#ride-history" class="nav-link">
+                            <span class="nav-icon">📋</span>
+                            <span class="nav-text">Ride History</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#vehicle" class="nav-link">
+                            <span class="nav-icon">🔧</span>
+                            <span class="nav-text">Vehicle</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profile" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#support" class="nav-link">
+                            <span class="nav-icon">🆘</span>
+                            <span class="nav-text">Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()">
+                    <span class="nav-icon">🚪</span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 class="page-title">Driver Dashboard</h1>
+                    <p class="page-subtitle">Welcome back, Kwame! Ready to earn today?</p>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <div class="online-status offline">
+                            <span class="status-indicator"></span>
+                            <span class="status-text">Offline</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="showSection('go-online')">
+                            <span class="btn-icon">🟢</span>
+                            Go Online
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Dashboard Overview -->
+                <section id="dashboard" class="content-section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">💰</div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">GHS 2,450</h3>
+                                <p class="stat-label">Total Earnings</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🚗</div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">156</h3>
+                                <p class="stat-label">Trips Completed</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⭐</div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">4.9</h3>
+                                <p class="stat-label">Driver Rating</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⏱️</div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">45h</h3>
+                                <p class="stat-label">Online Time</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Today's Summary</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="today-stats">
+                                    <div class="today-stat">
+                                        <span class="stat-label">Earnings</span>
+                                        <span class="stat-value">GHS 185</span>
+                                    </div>
+                                    <div class="today-stat">
+                                        <span class="stat-label">Trips</span>
+                                        <span class="stat-value">8</span>
+                                    </div>
+                                    <div class="today-stat">
+                                        <span class="stat-label">Online Hours</span>
+                                        <span class="stat-value">6.5h</span>
+                                    </div>
+                                    <div class="today-stat">
+                                        <span class="stat-label">Rating</span>
+                                        <span class="stat-value">4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Recent Trips</h3>
+                                <a href="#ride-history" class="view-all-link">View All</a>
+                            </div>
+                            <div class="card-content">
+                                <div class="ride-list">
+                                    <div class="ride-item">
+                                        <div class="ride-info">
+                                            <div class="ride-route">
+                                                <span class="pickup">East Legon</span>
+                                                <span class="separator">→</span>
+                                                <span class="destination">Accra Mall</span>
+                                            </div>
+                                            <div class="ride-details">
+                                                <span class="ride-date">Today, 4:30 PM</span>
+                                                <span class="ride-cost">+GHS 25</span>
+                                            </div>
+                                        </div>
+                                        <div class="ride-status completed">Completed</div>
+                                    </div>
+                                    <div class="ride-item">
+                                        <div class="ride-info">
+                                            <div class="ride-route">
+                                                <span class="pickup">Osu</span>
+                                                <span class="separator">→</span>
+                                                <span class="destination">Airport</span>
+                                            </div>
+                                            <div class="ride-details">
+                                                <span class="ride-date">Today, 2:15 PM</span>
+                                                <span class="ride-cost">+GHS 45</span>
+                                            </div>
+                                        </div>
+                                        <div class="ride-status completed">Completed</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Earnings This Week</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="earnings-chart">
+                                    <p>📊 Earnings chart will be displayed here</p>
+                                    <div class="weekly-total">
+                                        <span class="total-label">Total This Week:</span>
+                                        <span class="total-amount">GHS 1,250</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Vehicle Status</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="vehicle-status">
+                                    <div class="vehicle-info">
+                                        <h4>Toyota Corolla</h4>
+                                        <p>GR-2345-20</p>
+                                    </div>
+                                    <div class="vehicle-checks">
+                                        <div class="check-item">
+                                            <span class="check-icon">✅</span>
+                                            <span>Insurance Valid</span>
+                                        </div>
+                                        <div class="check-item">
+                                            <span class="check-icon">✅</span>
+                                            <span>Roadworthy Valid</span>
+                                        </div>
+                                        <div class="check-item">
+                                            <span class="check-icon">⚠️</span>
+                                            <span>Service Due Soon</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Go Online Section -->
+                <section id="go-online" class="content-section">
+                    <div class="section-header">
+                        <h2>Driver Status</h2>
+                        <p>Toggle your availability to start receiving ride requests</p>
+                    </div>
+                    <div class="online-toggle-container">
+                        <div class="status-card">
+                            <div class="status-display">
+                                <div class="status-icon offline">🔴</div>
+                                <h3>You're Currently Offline</h3>
+                                <p>Turn on to start receiving ride requests</p>
+                            </div>
+                            <div class="toggle-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="onlineToggle">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="toggle-label">Go Online</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ride Requests Section -->
+                <section id="ride-requests" class="content-section">
+                    <div class="section-header">
+                        <h2>Ride Requests</h2>
+                        <p>Accept or decline incoming ride requests</p>
+                    </div>
+                    <div class="ride-requests-container">
+                        <div class="no-requests">
+                            <div class="empty-state">
+                                <span class="empty-icon">📱</span>
+                                <h3>No Active Requests</h3>
+                                <p>Go online to start receiving ride requests</p>
+                                <button class="btn btn-primary" onclick="showSection('go-online')">Go Online</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Earnings Section -->
+                <section id="earnings" class="content-section">
+                    <div class="section-header">
+                        <h2>Earnings</h2>
+                        <p>Track your earnings and payment history</p>
+                    </div>
+                    <div class="earnings-container">
+                        <div class="earnings-summary">
+                            <div class="summary-card">
+                                <h3>Today</h3>
+                                <div class="amount">GHS 185</div>
+                                <div class="trips">8 trips</div>
+                            </div>
+                            <div class="summary-card">
+                                <h3>This Week</h3>
+                                <div class="amount">GHS 1,250</div>
+                                <div class="trips">45 trips</div>
+                            </div>
+                            <div class="summary-card">
+                                <h3>This Month</h3>
+                                <div class="amount">GHS 4,200</div>
+                                <div class="trips">156 trips</div>
+                            </div>
+                        </div>
+                        <div class="payment-info">
+                            <h3>Next Payout</h3>
+                            <p>Your earnings will be paid to your mobile money account on Friday</p>
+                            <div class="payout-details">
+                                <span>Amount: GHS 1,250</span>
+                                <span>Account: MTN **** **34</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
