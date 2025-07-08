@@ -1,0 +1,638 @@
+/* Forms CSS - Styles for login and signup forms */
+
+/* General Form Styles */
+.login-main,
+.signup-main {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 120px 0 40px;
+}
+
+.login-wrapper,
+.signup-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.login-header,
+.signup-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.login-header h1,
+.signup-header h1 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-header p,
+.signup-header p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.login-container,
+.signup-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-medium);
+    padding: 3rem;
+}
+
+.login-form-section,
+.signup-form-section {
+    padding-right: 1rem;
+}
+
+.login-info-section,
+.signup-info-section {
+    padding-left: 1rem;
+    border-left: 1px solid var(--border-color);
+}
+
+/* Form Styles */
+.login-form,
+.signup-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: var(--font-family-primary);
+    transition: var(--transition);
+    background-color: var(--background-color);
+    color: var(--text-primary);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.form-input::placeholder {
+    color: var(--text-light);
+}
+
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+    border-color: var(--accent-color);
+}
+
+.form-error {
+    color: var(--accent-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.form-success {
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Password Input */
+.password-input-container {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.password-toggle:hover {
+    color: var(--text-primary);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.password-toggle-icon {
+    display: inline-block;
+    font-size: 1.1rem;
+}
+
+/* Checkbox and Radio */
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    margin-right: 0.75rem;
+    margin-top: 0.25rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.form-check-label {
+    font-weight: 400;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.form-check-label a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.form-check-label a:hover {
+    color: var(--secondary-color);
+}
+
+/* File Upload */
+.file-upload-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+}
+
+.file-upload-input {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+
+.file-upload-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.file-upload-button:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(212, 175, 55, 0.05);
+}
+
+.file-upload-button.has-file {
+    border-color: var(--secondary-color);
+    background-color: rgba(0, 107, 63, 0.05);
+    color: var(--secondary-color);
+}
+
+.file-upload-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.file-upload-text {
+    font-size: 0.95rem;
+}
+
+/* Button Styles */
+.btn-full-width {
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid var(--background-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+/* Login Specific Styles */
+.login-divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.login-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.login-divider span {
+    background-color: var(--background-color);
+    padding: 0 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.forgot-password-link {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+.alternative-login {
+    padding: 2rem 0;
+}
+
+.ussd-login {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.ussd-login h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.ussd-login p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.ussd-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.ussd-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.ussd-step .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 50%;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.ussd-step .step-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* Info Section Styles */
+.login-benefits,
+.signup-benefits {
+    margin-bottom: 3rem;
+}
+
+.login-benefits h3,
+.signup-benefits h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+}
+
+.benefit-content h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.benefit-content p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.signup-prompt {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.signup-prompt h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.signup-prompt p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.signup-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-dark);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+/* Footer Styles */
+.auth-footer {
+    background-color: var(--background-color);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.auth-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Signup Specific Styles */
+.signup-step {
+    margin-bottom: 2rem;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 50%;
+    font-weight: 600;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+}
+
+.step-title {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-section {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.form-section h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.requirements-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.requirements-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.requirements-list li::before {
+    content: '•';
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--background-color);
+    font-weight: 500;
+    max-width: 300px;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: var(--transition);
+    box-shadow: var(--shadow-medium);
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-success {
+    background-color: var(--secondary-color);
+}
+
+.notification-error {
+    background-color: var(--accent-color);
+}
+
+.notification-warning {
+    background-color: #f39c12;
+}
+
+.notification-info {
+    background-color: #3498db;
+}

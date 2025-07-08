@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Signup - Elyte Platform</title>
+    <meta name="description" content="Join Elyte as a passenger. Book rides easily and safely across Ghana with mobile money, web, and USSD access.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Elyte Platform" class="logo-img">
+                    <span class="logo-text">Elyte</span>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="signup-main">
+        <div class="container">
+            <div class="signup-wrapper">
+                <div class="signup-header">
+                    <h1>Join Elyte as a Passenger</h1>
+                    <p>Create your account to start booking rides across Ghana</p>
+                </div>
+
+                <div class="signup-container">
+                    <div class="signup-form-section">
+                        <form id="signupForm" class="signup-form" novalidate>
+                            <!-- Personal Information -->
+                            <div class="form-section">
+                                <h3>Personal Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">First Name *</label>
+                                        <input type="text" id="firstName" name="firstName" class="form-input" required
+                                               placeholder="Enter your first name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">Last Name *</label>
+                                        <input type="text" id="lastName" name="lastName" class="form-input" required
+                                               placeholder="Enter your last name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required
+                                           placeholder="Enter your email address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" required
+                                           placeholder="Enter your phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                                    <input type="date" id="dateOfBirth" name="dateOfBirth" class="form-input">
+                                </div>
+                            </div>
+
+                            <!-- Location Information -->
+                            <div class="form-section">
+                                <h3>Location Information</h3>
+                                <div class="form-group">
+                                    <label for="currentAddress" class="form-label">Current Address *</label>
+                                    <textarea id="currentAddress" name="currentAddress" class="form-textarea" rows="3" required
+                                              placeholder="Enter your current address"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="region" class="form-label">Region *</label>
+                                        <select id="region" name="region" class="form-select" required>
+                                            <option value="">Select your region</option>
+                                            <option value="greater-accra">Greater Accra</option>
+                                            <option value="ashanti">Ashanti</option>
+                                            <option value="western">Western</option>
+                                            <option value="central">Central</option>
+                                            <option value="volta">Volta</option>
+                                            <option value="eastern">Eastern</option>
+                                            <option value="northern">Northern</option>
+                                            <option value="upper-east">Upper East</option>
+                                            <option value="upper-west">Upper West</option>
+                                            <option value="brong-ahafo">Brong-Ahafo</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city" class="form-label">City/Town *</label>
+                                        <input type="text" id="city" name="city" class="form-input" required
+                                               placeholder="Enter your city or town">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="preferredAreas" class="form-label">Preferred Pickup Areas</label>
+                                    <textarea id="preferredAreas" name="preferredAreas" class="form-textarea" rows="2"
+                                              placeholder="List areas where you frequently need pickup (e.g., Home, Work, School)"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Payment Setup -->
+                            <div class="form-section">
+                                <h3>Payment Setup</h3>
+                                <div class="form-group">
+                                    <label class="form-label">Select Payment Methods *</label>
+                                    <div class="payment-methods">
+                                        <div class="form-check">
+                                            <input type="checkbox" id="mtnMoney" name="paymentMethods" value="mtn-money" class="form-check-input">
+                                            <label for="mtnMoney" class="form-check-label">
+                                                <span class="payment-icon">📱</span> MTN Mobile Money
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="vodafoneCash" name="paymentMethods" value="vodafone-cash" class="form-check-input">
+                                            <label for="vodafoneCash" class="form-check-label">
+                                                <span class="payment-icon">💳</span> Vodafone Cash
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="airtelTigo" name="paymentMethods" value="airteltigo-money" class="form-check-input">
+                                            <label for="airtelTigo" class="form-check-label">
+                                                <span class="payment-icon">💰</span> AirtelTigo Money
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="primaryPaymentPhone" class="form-label">Primary Payment Phone Number</label>
+                                    <input type="tel" id="primaryPaymentPhone" name="primaryPaymentPhone" class="form-input"
+                                           placeholder="Enter mobile money phone number">
+                                </div>
+                            </div>
+
+                            <!-- Account Security -->
+                            <div class="form-section">
+                                <h3>Account Security</h3>
+                                <div class="form-group">
+                                    <label for="password" class="form-label">Password *</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="password" name="password" class="form-input" required
+                                               placeholder="Create a secure password">
+                                        <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                            <span class="password-toggle-icon">👁️</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required
+                                               placeholder="Confirm your password">
+                                        <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                            <span class="password-toggle-icon">👁️</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- USSD Setup -->
+                            <div class="form-section">
+                                <h3>USSD Access (Optional)</h3>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="enableUSSD" name="enableUSSD" class="form-check-input">
+                                        <label for="enableUSSD" class="form-check-label">
+                                            Enable USSD access for booking rides without internet
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group ussd-pin-group" style="display: none;">
+                                    <label for="ussdPin" class="form-label">USSD PIN (4 digits)</label>
+                                    <input type="password" id="ussdPin" name="ussdPin" class="form-input" maxlength="4"
+                                           placeholder="Enter 4-digit PIN for USSD access">
+                                    <small class="form-help">Use this PIN when accessing your account via USSD (*920#)</small>
+                                </div>
+                            </div>
+
+                            <!-- Emergency Contact -->
+                            <div class="form-section">
+                                <h3>Emergency Contact (Optional)</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="emergencyName" class="form-label">Emergency Contact Name</label>
+                                        <input type="text" id="emergencyName" name="emergencyName" class="form-input"
+                                               placeholder="Enter emergency contact name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="emergencyPhone" class="form-label">Emergency Contact Phone</label>
+                                        <input type="tel" id="emergencyPhone" name="emergencyPhone" class="form-input"
+                                               placeholder="Enter emergency contact phone">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="emergencyRelationship" class="form-label">Relationship</label>
+                                    <select id="emergencyRelationship" name="emergencyRelationship" class="form-select">
+                                        <option value="">Select relationship</option>
+                                        <option value="parent">Parent</option>
+                                        <option value="spouse">Spouse</option>
+                                        <option value="sibling">Sibling</option>
+                                        <option value="friend">Friend</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="form-section">
+                                <h3>Terms and Conditions</h3>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeTerms" name="agreeTerms" class="form-check-input" required>
+                                        <label for="agreeTerms" class="form-check-label">
+                                            I agree to the <a href="#terms">Terms and Conditions</a> and <a href="#privacy">Privacy Policy</a> *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeMarketing" name="agreeMarketing" class="form-check-input">
+                                        <label for="agreeMarketing" class="form-check-label">
+                                            I agree to receive marketing communications via email and SMS
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeDataSharing" name="agreeDataSharing" class="form-check-input">
+                                        <label for="agreeDataSharing" class="form-check-label">
+                                            I agree to share my ride data with drivers for service improvement
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-large btn-full-width">
+                                    Create Passenger Account
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="signup-info-section">
+                        <div class="signup-benefits">
+                            <h3>As an Elyte Passenger, You Get:</h3>
+                            <ul class="benefits-list">
+                                <li>
+                                    <span class="benefit-icon">🚗</span>
+                                    <div class="benefit-content">
+                                        <h4>Safe & Verified Drivers</h4>
+                                        <p>All drivers are background-checked with valid licenses and insurance</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">💰</span>
+                                    <div class="benefit-content">
+                                        <h4>Convenient Payments</h4>
+                                        <p>Pay with MTN Mobile Money, Vodafone Cash, or AirtelTigo Money</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">📱</span>
+                                    <div class="benefit-content">
+                                        <h4>Multi-Platform Access</h4>
+                                        <p>Book rides via web, mobile app, or USSD - whatever works for you</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">📍</span>
+                                    <div class="benefit-content">
+                                        <h4>Real-Time Tracking</h4>
+                                        <p>Track your ride in real-time and share your location with family</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">🌍</span>
+                                    <div class="benefit-content">
+                                        <h4>Works Offline</h4>
+                                        <p>Book rides even with poor internet connection</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="benefit-icon">⭐</span>
+                                    <div class="benefit-content">
+                                        <h4>Rate & Review</h4>
+                                        <p>Rate your rides and help maintain service quality</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="signup-help">
+                            <h3>Need Help?</h3>
+                            <p>Our support team is here to help you get started.</p>
+                            <div class="help-options">
+                                <div class="help-option">
+                                    <span class="help-icon">📞</span>
+                                    <div class="help-content">
+                                        <h4>Phone Support</h4>
+                                        <p>+233 XX XXX XXXX</p>
+                                    </div>
+                                </div>
+                                <div class="help-option">
+                                    <span class="help-icon">💬</span>
+                                    <div class="help-content">
+                                        <h4>USSD Help</h4>
+                                        <p>Dial *920*9# for assistance</p>
+                                    </div>
+                                </div>
+                                <div class="help-option">
+                                    <span class="help-icon">📧</span>
+                                    <div class="help-content">
+                                        <h4>Email Support</h4>
+                                        <p>support@elyte.com.gh</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="auth-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="login.html">Already have an account? Login</a>
+                    <a href="signup-driver.html">Become a Driver</a>
+                    <a href="index.html#privacy">Privacy Policy</a>
+                    <a href="index.html#terms">Terms of Service</a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2024 Elyte Platform. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // USSD PIN toggle
+        document.getElementById('enableUSSD').addEventListener('change', function() {
+            const ussdPinGroup = document.querySelector('.ussd-pin-group');
+            if (this.checked) {
+                ussdPinGroup.style.display = 'block';
+                document.getElementById('ussdPin').required = true;
+            } else {
+                ussdPinGroup.style.display = 'none';
+                document.getElementById('ussdPin').required = false;
+                document.getElementById('ussdPin').value = '';
+            }
+        });
+
+        // Payment method validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const paymentCheckboxes = document.querySelectorAll('input[name="paymentMethods"]');
+            const form = document.getElementById('signupForm');
+            
+            form.addEventListener('submit', function(e) {
+                const isChecked = Array.from(paymentCheckboxes).some(cb => cb.checked);
+                if (!isChecked) {
+                    e.preventDefault();
+                    alert('Please select at least one payment method');
+                    paymentCheckboxes[0].focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
