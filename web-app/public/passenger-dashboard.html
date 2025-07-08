@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Dashboard - Elyte</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Book Your Ride</h1>
+                <div class="user-info">
+                    <span>Welcome, John!</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="dashboard-main">
+            <div class="booking-section">
+                <div class="booking-form">
+                    <h2>Where are you going?</h2>
+                    
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="pickup">Pickup Location</label>
+                            <input type="text" id="pickup" name="pickup" placeholder="Enter pickup location" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="destination">Destination</label>
+                            <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
+                        </div>
+                        
+                        <div class="ride-types">
+                            <h3>Select Ride Type</h3>
+                            <div class="ride-type-grid">
+                                <div class="ride-type-card" data-type="standard">
+                                    <div class="ride-icon">🚗</div>
+                                    <h4>Standard</h4>
+                                    <p>GHS 15-25</p>
+                                </div>
+                                <div class="ride-type-card" data-type="premium">
+                                    <div class="ride-icon">🚙</div>
+                                    <h4>Premium</h4>
+                                    <p>GHS 25-40</p>
+                                </div>
+                                <div class="ride-type-card" data-type="shared">
+                                    <div class="ride-icon">🚐</div>
+                                    <h4>Shared</h4>
+                                    <p>GHS 8-15</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-methods">
+                            <h3>Payment Method</h3>
+                            <div class="payment-grid">
+                                <div class="payment-option" data-method="mobile-money">
+                                    <span>📱</span>
+                                    <span>Mobile Money</span>
+                                </div>
+                                <div class="payment-option" data-method="cash">
+                                    <span>💵</span>
+                                    <span>Cash</span>
+                                </div>
+                                <div class="payment-option" data-method="card">
+                                    <span>💳</span>
+                                    <span>Card</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">Book Ride</button>
+                    </form>
+                </div>
+                
+                <div class="map-section">
+                    <div id="map" class="map-container">
+                        <div class="map-placeholder">
+                            <p>📍 Map will show your location and nearby drivers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ride-history">
+                <h3>Recent Rides</h3>
+                <div class="ride-history-list">
+                    <div class="ride-item">
+                        <div class="ride-details">
+                            <h4>Accra Mall → Kotoka Airport</h4>
+                            <p>Dec 15, 2024 • GHS 45.00</p>
+                        </div>
+                        <div class="ride-status completed">Completed</div>
+                    </div>
+                    <div class="ride-item">
+                        <div class="ride-details">
+                            <h4>Tema → Accra Central</h4>
+                            <p>Dec 14, 2024 • GHS 28.50</p>
+                        </div>
+                        <div class="ride-status completed">Completed</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="../src/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard - Elyte</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Driver Dashboard</h1>
+                <div class="user-info">
+                    <span>Welcome, Driver Kwame!</span>
+                    <div class="driver-status">
+                        <button id="statusToggle" class="status-btn online">Go Online</button>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="dashboard-main">
+            <div class="driver-stats">
+                <div class="stat-card">
+                    <h3>Today's Earnings</h3>
+                    <p class="stat-value">GHS 125.50</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Rides Completed</h3>
+                    <p class="stat-value">8</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Rating</h3>
+                    <p class="stat-value">4.8 ⭐</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Online Time</h3>
+                    <p class="stat-value">6h 30m</p>
+                </div>
+            </div>
+            
+            <div class="driver-main-content">
+                <div class="ride-requests">
+                    <h2>Ride Requests</h2>
+                    <div id="rideRequestsList" class="ride-requests-list">
+                        <div class="no-requests">
+                            <p>🚗 Ready to accept rides!</p>
+                            <p>Turn on your status to start receiving ride requests</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-section">
+                    <div id="driverMap" class="map-container">
+                        <div class="map-placeholder">
+                            <p>📍 Map showing your location and nearby ride requests</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recent-rides">
+                <h3>Recent Rides</h3>
+                <div class="ride-history-list">
+                    <div class="ride-item">
+                        <div class="ride-details">
+                            <h4>Pickup: Osu • Drop: Airport</h4>
+                            <p>Dec 15, 2024 • Earned: GHS 32.00</p>
+                        </div>
+                        <div class="ride-rating">
+                            <span>⭐ 5.0</span>
+                        </div>
+                    </div>
+                    <div class="ride-item">
+                        <div class="ride-details">
+                            <h4>Pickup: Tema • Drop: Accra Mall</h4>
+                            <p>Dec 15, 2024 • Earned: GHS 28.50</p>
+                        </div>
+                        <div class="ride-rating">
+                            <span>⭐ 4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Ride Request Modal -->
+    <div id="rideRequestModal" class="modal">
+        <div class="modal-content">
+            <h3>New Ride Request</h3>
+            <div class="request-details">
+                <p><strong>Pickup:</strong> <span id="requestPickup">Osu Oxford Street</span></p>
+                <p><strong>Destination:</strong> <span id="requestDestination">Kotoka Airport</span></p>
+                <p><strong>Distance:</strong> <span id="requestDistance">15.2 km</span></p>
+                <p><strong>Estimated Fare:</strong> <span id="requestFare">GHS 32.00</span></p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="declineRide()">Decline</button>
+                <button class="btn btn-primary" onclick="acceptRide()">Accept</button>
+            </div>
+            <div class="request-timer">
+                <p>Auto-decline in <span id="timer">15</span> seconds</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../src/js/driver-dashboard.js"></script>
+</body>
+</html>
