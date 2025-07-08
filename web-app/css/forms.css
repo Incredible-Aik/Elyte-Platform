@@ -1,0 +1,1054 @@
+/* =============================================================================
+   FORMS CSS
+   Elyte Platform - Ghana Ride-Sharing Platform
+   ============================================================================= */
+
+/* =============================================================================
+   AUTHENTICATION PAGES
+   ============================================================================= */
+
+.auth-page {
+  background-color: var(--bg-secondary);
+  min-height: 100vh;
+}
+
+.auth-nav {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.auth-main {
+  padding: var(--spacing-xl) 0;
+}
+
+.auth-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+}
+
+.auth-content {
+  background-color: var(--bg-primary);
+  padding: var(--spacing-3xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.auth-header h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.auth-header p {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* =============================================================================
+   ACCOUNT TYPE BADGE
+   ============================================================================= */
+
+.account-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.account-type-badge img {
+  width: 20px;
+  height: 20px;
+}
+
+.account-type-badge.passenger {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.account-type-badge.driver {
+  background-color: var(--secondary-light);
+  color: var(--secondary-dark);
+}
+
+.account-type-badge.admin {
+  background-color: var(--info-color);
+  color: var(--text-white);
+}
+
+/* =============================================================================
+   PROGRESS INDICATOR
+   ============================================================================= */
+
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+}
+
+.progress-indicator .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  position: relative;
+}
+
+.progress-indicator .step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 100%;
+  width: var(--spacing-lg);
+  height: 2px;
+  background-color: var(--border-light);
+  z-index: -1;
+}
+
+.progress-indicator .step.active:not(:last-child)::after {
+  background-color: var(--primary-color);
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  background-color: var(--border-light);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  transition: all var(--transition-fast);
+}
+
+.step.active .step-number {
+  background-color: var(--primary-color);
+  color: var(--text-white);
+}
+
+.step.completed .step-number {
+  background-color: var(--success-color);
+  color: var(--text-white);
+}
+
+.step.completed .step-number::after {
+  content: '✓';
+}
+
+.progress-indicator .step span {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.step.active span {
+  color: var(--primary-color);
+}
+
+/* =============================================================================
+   MULTI-STEP FORM
+   ============================================================================= */
+
+.multi-step-form {
+  position: relative;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.form-step h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--border-light);
+}
+
+/* =============================================================================
+   FORM LAYOUT
+   ============================================================================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  background-color: var(--bg-primary);
+  transition: all var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* =============================================================================
+   SPECIALIZED INPUT TYPES
+   ============================================================================= */
+
+/* Phone Input */
+.phone-input {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.phone-input .country-code {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.phone-input input {
+  flex: 1;
+}
+
+/* Password Input */
+.password-input {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.password-toggle:hover {
+  color: var(--primary-color);
+  background-color: var(--bg-secondary);
+}
+
+.password-toggle:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.password-strength-bar {
+  height: 4px;
+  background-color: var(--border-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex: 1;
+}
+
+.password-strength-fill {
+  height: 100%;
+  transition: all var(--transition-normal);
+}
+
+.password-strength-fill.weak {
+  width: 33%;
+  background-color: var(--error-color);
+}
+
+.password-strength-fill.medium {
+  width: 66%;
+  background-color: var(--warning-color);
+}
+
+.password-strength-fill.strong {
+  width: 100%;
+  background-color: var(--success-color);
+}
+
+.password-strength-text {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+/* =============================================================================
+   MOBILE MONEY OPTIONS
+   ============================================================================= */
+
+.mobile-money-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.radio-card {
+  display: block;
+  cursor: pointer;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  transition: all var(--transition-fast);
+  background-color: var(--bg-primary);
+}
+
+.radio-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.radio-card input[type="radio"] {
+  display: none;
+}
+
+.radio-card input[type="radio"]:checked + .card-content {
+  border-color: var(--primary-color);
+}
+
+.radio-card input[type="radio"]:checked ~ .card-content {
+  border-color: var(--primary-color);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-align: center;
+}
+
+.provider-logo {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-white);
+  border-radius: var(--radius-sm);
+}
+
+.provider-logo.mtn {
+  background-color: #FFCB05;
+  color: var(--text-primary);
+}
+
+.provider-logo.vodafone {
+  background-color: #E60000;
+}
+
+.provider-logo.airtel {
+  background-color: #FF6600;
+}
+
+.radio-card span {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.radio-card input[type="radio"]:checked + .card-content span {
+  color: var(--primary-color);
+}
+
+/* =============================================================================
+   FORM VALIDATION
+   ============================================================================= */
+
+.form-group.field-valid input,
+.form-group.field-valid textarea,
+.form-group.field-valid select {
+  border-color: var(--success-color);
+}
+
+.form-group.field-invalid input,
+.form-group.field-invalid textarea,
+.form-group.field-invalid select {
+  border-color: var(--error-color);
+}
+
+.field-error {
+  color: var(--error-color);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.field-error::before {
+  content: '⚠️';
+  font-size: var(--font-size-sm);
+}
+
+.field-success {
+  color: var(--success-color);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.field-success::before {
+  content: '✓';
+  font-size: var(--font-size-sm);
+}
+
+/* =============================================================================
+   FORM ACTIONS
+   ============================================================================= */
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-light);
+}
+
+.form-actions .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+.form-actions .btn:only-child {
+  flex: none;
+  min-width: 200px;
+}
+
+/* =============================================================================
+   FORM OPTIONS
+   ============================================================================= */
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  color: var(--text-white);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.forgot-password {
+  color: var(--primary-color);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.forgot-password:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* =============================================================================
+   ALTERNATIVE LOGIN METHODS
+   ============================================================================= */
+
+.alternative-login {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+}
+
+.divider {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--border-light);
+}
+
+.divider span {
+  background-color: var(--bg-primary);
+  padding: 0 var(--spacing-md);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.alternative-methods {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.btn-social {
+  flex: 1;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-social img {
+  width: 20px;
+  height: 20px;
+}
+
+/* =============================================================================
+   USSD INSTRUCTIONS
+   ============================================================================= */
+
+.ussd-info {
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.ussd-info h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+.ussd-steps {
+  margin-bottom: var(--spacing-lg);
+}
+
+.ussd-steps p {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+}
+
+.ussd-steps code {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-family: 'Courier New', monospace;
+  font-size: var(--font-size-sm);
+}
+
+/* =============================================================================
+   ACCOUNT TYPE INFO
+   ============================================================================= */
+
+.account-type-info {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-light);
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.info-card img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.info-card h4 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.info-card p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* =============================================================================
+   SIGNUP BENEFITS
+   ============================================================================= */
+
+.signup-benefits {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-light);
+}
+
+.signup-benefits h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.benefit-icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefit-icon img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+.benefit-text h4 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.benefit-text p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* =============================================================================
+   AUTH FOOTER
+   ============================================================================= */
+
+.auth-footer {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-light);
+}
+
+.auth-footer p {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.signup-links {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.signup-links .btn {
+  flex: 1;
+  max-width: 200px;
+}
+
+.other-signups {
+  margin-top: var(--spacing-md);
+}
+
+.other-signups small {
+  color: var(--text-light);
+  font-size: var(--font-size-sm);
+}
+
+.other-signups a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.other-signups a:hover {
+  text-decoration: underline;
+}
+
+.admin-signup {
+  margin-top: var(--spacing-md);
+}
+
+.link-primary {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.link-primary:hover {
+  text-decoration: underline;
+}
+
+/* =============================================================================
+   AUTH SIDEBAR
+   ============================================================================= */
+
+.auth-sidebar {
+  position: sticky;
+  top: var(--spacing-xl);
+}
+
+.sidebar-content {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.sidebar-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.sidebar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(220, 20, 60, 0.8) 0%,
+    rgba(185, 28, 60, 0.9) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+}
+
+.sidebar-text {
+  text-align: center;
+  color: var(--text-white);
+}
+
+.sidebar-text h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xl);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-text ul {
+  list-style: none;
+  margin-bottom: var(--spacing-xl);
+}
+
+.sidebar-text li {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  opacity: 0.95;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.stat {
+  text-align: center;
+  padding: var(--spacing-md);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+}
+
+.stat-number {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.testimonial {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.testimonial blockquote {
+  font-size: var(--font-size-base);
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.95;
+}
+
+.testimonial cite {
+  font-size: var(--font-size-sm);
+  opacity: 0.8;
+}
+
+.mobile-money-support {
+  margin-top: var(--spacing-lg);
+}
+
+.mobile-money-support p {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.9;
+}
+
+.providers {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+}
+
+.provider {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-white);
+}
+
+.provider.mtn {
+  background-color: #FFCB05;
+  color: var(--text-primary);
+}
+
+.provider.vodafone {
+  background-color: #E60000;
+}
+
+.provider.airtel {
+  background-color: #FF6600;
+}
+
+/* =============================================================================
+   FOOTER
+   ============================================================================= */
+
+.auth-footer-minimal {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  padding: var(--spacing-lg) 0;
+  margin-top: auto;
+}
+
+.auth-footer-minimal .footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.footer-links a {
+  color: var(--text-light);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================= */
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .auth-content {
+    padding: var(--spacing-xl);
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .alternative-methods {
+    flex-direction: column;
+  }
+  
+  .signup-links {
+    flex-direction: column;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-money-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .auth-footer-minimal .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .auth-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .progress-indicator {
+    gap: var(--spacing-md);
+  }
+  
+  .progress-indicator .step span {
+    display: none;
+  }
+  
+  .phone-input {
+    flex-direction: column;
+  }
+  
+  .phone-input .country-code {
+    width: 100%;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefit-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .sidebar-text h2 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .sidebar-overlay {
+    padding: var(--spacing-lg);
+  }
+}

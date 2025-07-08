@@ -1,0 +1,278 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  database:
+    image: postgis/postgis:15-3.3
+    container_name: elyte-database
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: elyte_platform
+      POSTGRES_USER: elyte_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-elyte_secure_password_2024}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./database/seeds:/docker-entrypoint-initdb.d/seeds
+    ports:
+      - "5432:5432"
+    networks:
+      - elyte-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U elyte_user -d elyte_platform"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis for Caching and Sessions
+  redis:
+    image: redis:7-alpine
+    container_name: elyte-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-elyte_redis_2024}
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - elyte-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Main API Service
+  api:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile.api
+    container_name: elyte-api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: 3001
+      
+      # Database configuration
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_NAME: elyte_platform
+      DB_USER: elyte_user
+      DB_PASSWORD: ${DB_PASSWORD:-elyte_secure_password_2024}
+      
+      # Redis configuration
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-elyte_redis_2024}
+      
+      # JWT configuration
+      JWT_SECRET: ${JWT_SECRET:-elyte_jwt_secret_key_very_secure_2024}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-7d}
+      
+      # Mobile Money API Keys (replace with actual keys)
+      MTN_API_KEY: ${MTN_API_KEY:-your_mtn_api_key}
+      MTN_API_SECRET: ${MTN_API_SECRET:-your_mtn_api_secret}
+      VODAFONE_API_KEY: ${VODAFONE_API_KEY:-your_vodafone_api_key}
+      VODAFONE_API_SECRET: ${VODAFONE_API_SECRET:-your_vodafone_api_secret}
+      AIRTELTIGO_API_KEY: ${AIRTELTIGO_API_KEY:-your_airteltigo_api_key}
+      AIRTELTIGO_API_SECRET: ${AIRTELTIGO_API_SECRET:-your_airteltigo_api_secret}
+      
+      # SMS/Notification service
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID:-your_twilio_sid}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN:-your_twilio_token}
+      TWILIO_PHONE_NUMBER: ${TWILIO_PHONE_NUMBER:-+1234567890}
+      
+      # Email service
+      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-your_email@gmail.com}
+      SMTP_PASS: ${SMTP_PASS:-your_email_password}
+      
+      # Ghana-specific settings
+      DEFAULT_CURRENCY: GHS
+      DEFAULT_TIMEZONE: GMT
+      SUPPORTED_CITIES: "Accra,Kumasi,Tamale,Cape Coast,Sekondi-Takoradi,Sunyani,Koforidua,Ho,Bolgatanga,Wa"
+      
+    volumes:
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+    ports:
+      - "3001:3001"
+    depends_on:
+      database:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - elyte-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # USSD Service
+  ussd:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile.ussd
+    container_name: elyte-ussd
+    restart: unless-stopped
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      USSD_PORT: 3002
+      
+      # API connection
+      API_BASE_URL: http://api:3001/api
+      
+      # Telecom provider configurations
+      MTN_USSD_ENDPOINT: ${MTN_USSD_ENDPOINT:-https://api.mtn.com/ussd}
+      MTN_USSD_API_KEY: ${MTN_USSD_API_KEY:-your_mtn_ussd_key}
+      
+      VODAFONE_USSD_ENDPOINT: ${VODAFONE_USSD_ENDPOINT:-https://api.vodafone.com.gh/ussd}
+      VODAFONE_USSD_API_KEY: ${VODAFONE_USSD_API_KEY:-your_vodafone_ussd_key}
+      
+      AIRTELTIGO_USSD_ENDPOINT: ${AIRTELTIGO_USSD_ENDPOINT:-https://api.airteltigo.com.gh/ussd}
+      AIRTELTIGO_USSD_API_KEY: ${AIRTELTIGO_USSD_API_KEY:-your_airteltigo_ussd_key}
+      
+      # SMS configuration for USSD confirmations
+      SMS_API_KEY: ${SMS_API_KEY:-your_sms_api_key}
+      SMS_SENDER_ID: ELYTE
+      
+    ports:
+      - "3002:3002"
+    depends_on:
+      - api
+    networks:
+      - elyte-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Web Application (Nginx serving static files)
+  web:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile.web
+    container_name: elyte-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deployment/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./deployment/ssl:/etc/nginx/ssl:ro
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - api
+      - ussd
+    networks:
+      - elyte-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Background Job Queue (Optional - for processing heavy tasks)
+  queue:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile.api
+    container_name: elyte-queue
+    restart: unless-stopped
+    command: ["node", "workers/queueWorker.js"]
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      
+      # Database configuration
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_NAME: elyte_platform
+      DB_USER: elyte_user
+      DB_PASSWORD: ${DB_PASSWORD:-elyte_secure_password_2024}
+      
+      # Redis configuration
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-elyte_redis_2024}
+      
+      # Queue specific settings
+      QUEUE_CONCURRENCY: ${QUEUE_CONCURRENCY:-5}
+      QUEUE_MAX_ATTEMPTS: ${QUEUE_MAX_ATTEMPTS:-3}
+      
+    depends_on:
+      database:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - elyte-network
+
+  # Monitoring with Prometheus (Optional)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: elyte-prometheus
+    restart: unless-stopped
+    profiles:
+      - monitoring
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./deployment/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - elyte-network
+
+  # Grafana for monitoring dashboards (Optional)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: elyte-grafana
+    restart: unless-stopped
+    profiles:
+      - monitoring
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin}
+      GF_INSTALL_PLUGINS: grafana-clock-panel,grafana-simple-json-datasource
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./deployment/grafana:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
+    networks:
+      - elyte-network
+
+# =============================================================================
+# VOLUMES
+# =============================================================================
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+
+# =============================================================================
+# NETWORKS
+# =============================================================================
+networks:
+  elyte-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

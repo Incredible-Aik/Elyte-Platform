@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up as Passenger - Elyte Platform</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <meta name="description" content="Join Elyte as a passenger - book rides across Ghana with mobile money payment">
+</head>
+<body class="auth-page">
+    <!-- Navigation Header -->
+    <header class="navbar auth-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Elyte Logo" class="logo">
+                    <span class="brand-name">Elyte</span>
+                </a>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-content">
+                <div class="auth-header">
+                    <div class="account-type-badge passenger">
+                        <img src="images/icons/passenger.svg" alt="Passenger">
+                        <span>Passenger Account</span>
+                    </div>
+                    <h1>Join Elyte as a Passenger</h1>
+                    <p>Book safe, reliable rides across Ghana with mobile money payment</p>
+                </div>
+
+                <!-- Progress Indicator -->
+                <div class="progress-indicator">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <span>Personal Info</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <span>Contact Details</span>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span>Verification</span>
+                    </div>
+                </div>
+
+                <!-- Signup Form -->
+                <form id="passenger-signup-form" class="auth-form multi-step-form">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" data-step="1">
+                        <h3>Personal Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    placeholder="Enter your first name"
+                                    required
+                                    autocomplete="given-name"
+                                >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    placeholder="Enter your last name"
+                                    required
+                                    autocomplete="family-name"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth *</label>
+                            <input 
+                                type="date" 
+                                id="dateOfBirth" 
+                                name="dateOfBirth" 
+                                required
+                                max="2006-01-01"
+                            >
+                            <div class="input-help">
+                                <small>You must be at least 18 years old</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="">Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary next-step">
+                                Next Step
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Contact Details -->
+                    <div class="form-step" data-step="2">
+                        <h3>Contact Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="Enter your email address"
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <div class="phone-input">
+                                <select class="country-code">
+                                    <option value="+233">🇬🇭 +233</option>
+                                </select>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    placeholder="24 123 4567"
+                                    required
+                                    autocomplete="tel"
+                                >
+                            </div>
+                            <div class="input-help">
+                                <small>This will be used for ride confirmations and SMS notifications</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <select id="city" name="city" required>
+                                <option value="">Select your city</option>
+                                <option value="accra">Accra</option>
+                                <option value="kumasi">Kumasi</option>
+                                <option value="tamale">Tamale</option>
+                                <option value="cape-coast">Cape Coast</option>
+                                <option value="sekondi-takoradi">Sekondi-Takoradi</option>
+                                <option value="sunyani">Sunyani</option>
+                                <option value="koforidua">Koforidua</option>
+                                <option value="ho">Ho</option>
+                                <option value="bolgatanga">Bolgatanga</option>
+                                <option value="wa">Wa</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Home Address</label>
+                            <textarea 
+                                id="address" 
+                                name="address" 
+                                rows="3"
+                                placeholder="Enter your home address (optional)"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline prev-step">
+                                Previous
+                            </button>
+                            <button type="button" class="btn btn-primary next-step">
+                                Next Step
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Account Setup & Verification -->
+                    <div class="form-step" data-step="3">
+                        <h3>Account Setup</h3>
+                        
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    placeholder="Create a strong password"
+                                    required
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                >
+                                <button type="button" class="password-toggle" aria-label="Show password">
+                                    👁️
+                                </button>
+                            </div>
+                            <div class="password-strength" id="password-strength"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password *</label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="confirmPassword" 
+                                    name="confirmPassword" 
+                                    placeholder="Confirm your password"
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="password-toggle" aria-label="Show password">
+                                    👁️
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Money Preference -->
+                        <div class="form-group">
+                            <label>Preferred Mobile Money Provider</label>
+                            <div class="mobile-money-options">
+                                <label class="radio-card">
+                                    <input type="radio" name="mobileMoneyProvider" value="mtn">
+                                    <div class="card-content">
+                                        <div class="provider-logo mtn">MTN</div>
+                                        <span>MTN Mobile Money</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="radio-card">
+                                    <input type="radio" name="mobileMoneyProvider" value="vodafone">
+                                    <div class="card-content">
+                                        <div class="provider-logo vodafone">Vodafone</div>
+                                        <span>Vodafone Cash</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="radio-card">
+                                    <input type="radio" name="mobileMoneyProvider" value="airteltigo">
+                                    <div class="card-content">
+                                        <div class="provider-logo airtel">AirtelTigo</div>
+                                        <span>AirtelTigo Money</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="input-help">
+                                <small>You can add multiple payment methods later</small>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter">
+                                <span class="checkmark"></span>
+                                Send me updates about new features and promotions
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline prev-step">
+                                Previous
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                Create Account
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Benefits Section -->
+                <div class="signup-benefits">
+                    <h3>Why Choose Elyte?</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <img src="images/icons/money.svg" alt="Mobile Money">
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Mobile Money Integration</h4>
+                                <p>Pay seamlessly with MTN, Vodafone, or AirtelTigo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <img src="images/icons/ussd.svg" alt="USSD">
+                            </div>
+                            <div class="benefit-text">
+                                <h4>USSD Accessibility</h4>
+                                <p>Book rides from any phone with *920*123#</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <img src="images/icons/taxi.svg" alt="Verified Drivers">
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Verified Drivers</h4>
+                                <p>All drivers are screened and professionally trained</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign In Link -->
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html" class="link-primary">Sign In</a></p>
+                    <div class="other-signups">
+                        <small>
+                            Want to drive with us? <a href="signup-driver.html">Sign up as a driver</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Image/Info -->
+            <div class="auth-sidebar">
+                <div class="sidebar-content">
+                    <img src="images/taxi-fleet.jpg" alt="Elyte Fleet" class="sidebar-image">
+                    <div class="sidebar-overlay">
+                        <div class="sidebar-text">
+                            <h2>Join Ghana's Fastest Growing Ride Platform</h2>
+                            <div class="stats-grid">
+                                <div class="stat">
+                                    <div class="stat-number">50,000+</div>
+                                    <div class="stat-label">Happy Passengers</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">500+</div>
+                                    <div class="stat-label">Active Drivers</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">10+</div>
+                                    <div class="stat-label">Cities Covered</div>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial">
+                                <blockquote>
+                                    "Elyte has made transportation so easy in Accra. The mobile money payment is seamless!"
+                                </blockquote>
+                                <cite>- Kwame A., Regular Passenger</cite>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Creating your account...</p>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/forms.js"></script>
+    
+    <script>
+        // Initialize passenger signup
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePassengerSignup();
+        });
+    </script>
+</body>
+</html>
