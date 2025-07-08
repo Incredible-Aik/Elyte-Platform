@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elyte Platform - Admin Dashboard</title>
+    <meta name="description" content="Professional admin dashboard for Elyte Platform - Manage rides, drivers, users, and analytics">
+    <meta name="keywords" content="taxi, ride-hailing, admin, dashboard, transportation, management">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/icons/taxi.svg">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container admin-dashboard">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar admin-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">E</div>
+                    Elyte Platform
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-view="overview">
+                    <span class="nav-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                
+                <a href="#" class="nav-item" data-view="rides">
+                    <span class="nav-icon">
+                        <i class="fas fa-car"></i>
+                    </span>
+                    <span class="nav-text">Rides</span>
+                    <span class="nav-badge">23</span>
+                </a>
+                
+                <a href="#" class="nav-item" data-view="drivers">
+                    <span class="nav-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </span>
+                    <span class="nav-text">Drivers</span>
+                    <span class="nav-badge">142</span>
+                </a>
+                
+                <a href="#" class="nav-item" data-view="users">
+                    <span class="nav-icon">
+                        <i class="fas fa-users"></i>
+                    </span>
+                    <span class="nav-text">Users</span>
+                </a>
+                
+                <a href="#" class="nav-item" data-view="payments">
+                    <span class="nav-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </span>
+                    <span class="nav-text">Payments</span>
+                </a>
+                
+                <a href="#" class="nav-item" data-view="reports">
+                    <span class="nav-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </span>
+                    <span class="nav-text">Reports</span>
+                </a>
+                
+                <a href="#" class="nav-item" data-view="settings">
+                    <span class="nav-icon">
+                        <i class="fas fa-cog"></i>
+                    </span>
+                    <span class="nav-text">Settings</span>
+                </a>
+                
+                <div class="nav-divider"></div>
+                
+                <a href="#" class="nav-item" data-view="support">
+                    <span class="nav-icon">
+                        <i class="fas fa-life-ring"></i>
+                    </span>
+                    <span class="nav-text">Support</span>
+                </a>
+                
+                <a href="#" class="nav-item" data-view="logout">
+                    <span class="nav-icon">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </span>
+                    <span class="nav-text">Logout</span>
+                </a>
+            </nav>
+        </aside>
+        
+        <!-- Header -->
+        <header class="dashboard-header admin-header">
+            <div class="header-left">
+                <button class="mobile-nav-toggle" id="mobile-menu-toggle" style="display: none;">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="logo mobile-logo" style="display: none;">
+                    <div class="logo-icon">E</div>
+                    Elyte
+                </div>
+                
+                <h1 class="page-title">Dashboard Overview</h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="admin-search">
+                    <i class="fas fa-search admin-search-icon"></i>
+                    <input type="text" class="admin-search-input" id="search-input" placeholder="Search rides, drivers, users...">
+                </div>
+                
+                <button class="notification-bell" id="notification-bell" data-tooltip="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="notification-badge"></span>
+                </button>
+                
+                <button class="theme-toggle" id="theme-toggle" data-tooltip="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="user-profile" id="user-profile">
+                    <img src="images/avatars/admin1.svg" alt="Admin Avatar" class="user-avatar" id="admin-avatar">
+                    <div class="user-info">
+                        <div class="user-name" id="admin-name">Admin User</div>
+                        <div class="user-role" id="admin-role">Super Admin</div>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="dashboard-main" id="main-content">
+            <!-- Overview Section -->
+            <div class="view-container" data-view-container="overview">
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <a href="#" class="quick-action" data-action="add-driver">
+                        <i class="fas fa-plus quick-action-icon"></i>
+                        Add Driver
+                    </a>
+                    <a href="#" class="quick-action" data-action="new-ride">
+                        <i class="fas fa-route quick-action-icon"></i>
+                        New Ride
+                    </a>
+                    <a href="#" class="quick-action" data-action="reports">
+                        <i class="fas fa-file-alt quick-action-icon"></i>
+                        Reports
+                    </a>
+                    <a href="#" class="quick-action" data-action="settings">
+                        <i class="fas fa-cogs quick-action-icon"></i>
+                        Settings
+                    </a>
+                </div>
+                
+                <!-- Statistics Cards -->
+                <div class="stats-grid admin-stats">
+                    <div class="stat-card admin-stat-card rides primary">
+                        <div class="stat-header">
+                            <h3 class="stat-title">Total Rides</h3>
+                            <div class="stat-icon primary">
+                                <i class="fas fa-car"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value" id="total-rides">12,847</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +12.5% from last month
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card admin-stat-card drivers success">
+                        <div class="stat-header">
+                            <h3 class="stat-title">Active Drivers</h3>
+                            <div class="stat-icon success">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value" id="active-drivers">142</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +8 new today
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card admin-stat-card revenue accent">
+                        <div class="stat-header">
+                            <h3 class="stat-title">Total Revenue</h3>
+                            <div class="stat-icon warning">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value" id="revenue">$45,230</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +15.3% from last month
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card admin-stat-card users warning">
+                        <div class="stat-header">
+                            <h3 class="stat-title">User Growth</h3>
+                            <div class="stat-icon accent">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value" id="user-growth">+23.5%</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            Excellent growth
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Rides Analytics</h3>
+                            <div class="chart-controls">
+                                <button class="chart-btn active chart-time-range" data-time-range="7d">7D</button>
+                                <button class="chart-btn chart-time-range" data-time-range="30d">30D</button>
+                                <button class="chart-btn chart-time-range" data-time-range="1y">1Y</button>
+                                <button class="chart-refresh">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chart-container" id="rides-chart" data-chart-type="rides">
+                            <div class="chart-placeholder">
+                                <canvas id="rides-chart-canvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-header">
+                            <h3 class="activity-title">Recent Activities</h3>
+                            <button class="btn btn-outline">View All</button>
+                        </div>
+                        <div class="activity-list" id="activities-list">
+                            <div class="activity-item">
+                                <div class="activity-icon primary">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">New ride completed by John Doe</div>
+                                    <div class="activity-time">2 minutes ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon success">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">Sarah Smith went online</div>
+                                    <div class="activity-time">5 minutes ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon warning">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">Payment of $25.50 processed</div>
+                                    <div class="activity-time">8 minutes ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon primary">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">New driver registration: Mike Johnson</div>
+                                    <div class="activity-time">15 minutes ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Charts -->
+                <div class="charts-section">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Revenue Trends</h3>
+                            <div class="chart-controls">
+                                <button class="chart-btn active">Monthly</button>
+                                <button class="chart-btn">Weekly</button>
+                                <button class="chart-btn">Daily</button>
+                            </div>
+                        </div>
+                        <div class="chart-container" id="revenue-chart" data-chart-type="revenue">
+                            <div class="chart-placeholder">
+                                <canvas id="revenue-chart-canvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Driver Status</h3>
+                        </div>
+                        <div class="chart-container" id="drivers-chart" data-chart-type="drivers">
+                            <div class="chart-placeholder">
+                                <canvas id="drivers-chart-canvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Rides Table -->
+                <div class="admin-table">
+                    <div class="admin-table-header">
+                        <h3 class="admin-table-title">Recent Rides</h3>
+                        <div class="admin-table-actions">
+                            <button class="btn btn-outline">Export</button>
+                            <button class="btn btn-primary">View All</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th data-sortable="id">Ride ID</th>
+                                    <th data-sortable="driver">Driver</th>
+                                    <th data-sortable="passenger">Passenger</th>
+                                    <th data-sortable="route">Route</th>
+                                    <th data-sortable="amount">Amount</th>
+                                    <th data-sortable="status">Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-row-id="12345">
+                                    <td data-column="id">#12345</td>
+                                    <td data-column="driver">John Doe</td>
+                                    <td data-column="passenger">Jane Smith</td>
+                                    <td data-column="route">Downtown → Airport</td>
+                                    <td data-column="amount">$25.50</td>
+                                    <td data-column="status"><span class="status completed">Completed</span></td>
+                                    <td>
+                                        <button class="table-action" data-action="view">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="table-action" data-action="edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr data-row-id="12344">
+                                    <td data-column="id">#12344</td>
+                                    <td data-column="driver">Sarah Wilson</td>
+                                    <td data-column="passenger">Mike Johnson</td>
+                                    <td data-column="route">Mall → Hotel</td>
+                                    <td data-column="amount">$18.75</td>
+                                    <td data-column="status"><span class="status active">In Progress</span></td>
+                                    <td>
+                                        <button class="table-action" data-action="view">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="table-action" data-action="edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr data-row-id="12343">
+                                    <td data-column="id">#12343</td>
+                                    <td data-column="driver">David Brown</td>
+                                    <td data-column="passenger">Lisa Davis</td>
+                                    <td data-column="route">Station → Office</td>
+                                    <td data-column="amount">$32.20</td>
+                                    <td data-column="status"><span class="status pending">Pending</span></td>
+                                    <td>
+                                        <button class="table-action" data-action="view">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="table-action" data-action="edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-sidebar" id="mobile-menu">
+        <div class="mobile-sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">E</div>
+                Elyte Platform
+            </div>
+            <button class="mobile-sidebar-close" id="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <!-- Copy of sidebar nav for mobile -->
+        <nav class="sidebar-nav">
+            <!-- Same navigation items as desktop sidebar -->
+        </nav>
+    </div>
+    
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notification-panel">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button class="btn btn-outline">Mark All Read</button>
+        </div>
+        <div class="notification-list" id="notification-list">
+            <!-- Notifications will be populated by JavaScript -->
+        </div>
+    </div>
+    
+    <!-- Search Results -->
+    <div class="search-results" id="search-results">
+        <!-- Search results will be populated by JavaScript -->
+    </div>
+    
+    <!-- Auto-save Indicator -->
+    <div class="autosave-indicator" id="autosave-indicator">Auto-saved</div>
+    
+    <!-- Last Refresh Indicator -->
+    <div class="last-refresh" id="last-refresh">Last updated: Now</div>
+    
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/charts.js"></script>
+    
+    <!-- Initialize Dashboard -->
+    <script>
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Elyte Platform Admin Dashboard - Version 1.0');
+            console.log('Professional UI Enhancement Complete');
+            
+            // Show welcome message for first-time users
+            if (!localStorage.getItem('elyte-dashboard-visited')) {
+                setTimeout(() => {
+                    if (window.ElyteAdmin && window.ElyteAdmin.showNotification) {
+                        window.ElyteAdmin.showNotification(
+                            'Welcome to Elyte Platform Admin Dashboard! 🚗', 
+                            'success'
+                        );
+                    }
+                    localStorage.setItem('elyte-dashboard-visited', 'true');
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

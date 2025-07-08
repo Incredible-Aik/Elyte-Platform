@@ -1,0 +1,122 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="800" height="280" fill="url(#skyGradient2)"/>
+  
+  <!-- Road -->
+  <rect x="0" y="280" width="800" height="120" fill="#2C3E50"/>
+  
+  <!-- Lane markings -->
+  <rect x="0" y="320" width="800" height="2" fill="#F39C12"/>
+  <rect x="0" y="360" width="800" height="2" fill="#F39C12"/>
+  
+  <!-- Dashed lines -->
+  <rect x="0" y="340" width="40" height="2" fill="white"/>
+  <rect x="60" y="340" width="40" height="2" fill="white"/>
+  <rect x="120" y="340" width="40" height="2" fill="white"/>
+  <rect x="180" y="340" width="40" height="2" fill="white"/>
+  <rect x="240" y="340" width="40" height="2" fill="white"/>
+  <rect x="300" y="340" width="40" height="2" fill="white"/>
+  <rect x="360" y="340" width="40" height="2" fill="white"/>
+  <rect x="420" y="340" width="40" height="2" fill="white"/>
+  <rect x="480" y="340" width="40" height="2" fill="white"/>
+  <rect x="540" y="340" width="40" height="2" fill="white"/>
+  <rect x="600" y="340" width="40" height="2" fill="white"/>
+  <rect x="660" y="340" width="40" height="2" fill="white"/>
+  <rect x="720" y="340" width="40" height="2" fill="white"/>
+  
+  <!-- Buildings background -->
+  <rect x="0" y="120" width="120" height="160" fill="#34495E"/>
+  <rect x="130" y="80" width="100" height="200" fill="#2C3E50"/>
+  <rect x="240" y="100" width="90" height="180" fill="#34495E"/>
+  <rect x="340" y="60" width="110" height="220" fill="#2C3E50"/>
+  <rect x="460" y="90" width="95" height="190" fill="#34495E"/>
+  <rect x="570" y="110" width="80" height="170" fill="#2C3E50"/>
+  <rect x="660" y="70" width="140" height="210" fill="#34495E"/>
+  
+  <!-- Traffic cars - Lane 1 -->
+  <g transform="translate(50, 300)">
+    <rect x="0" y="0" width="55" height="22" fill="#E74C3C"/>
+    <circle cx="8" cy="26" r="4" fill="#2C3E50"/>
+    <circle cx="47" cy="26" r="4" fill="#2C3E50"/>
+    <rect x="5" y="3" width="45" height="16" fill="#C0392B"/>
+  </g>
+  
+  <g transform="translate(150, 300)">
+    <rect x="0" y="0" width="55" height="22" fill="#3498DB"/>
+    <circle cx="8" cy="26" r="4" fill="#2C3E50"/>
+    <circle cx="47" cy="26" r="4" fill="#2C3E50"/>
+    <rect x="5" y="3" width="45" height="16" fill="#2980B9"/>
+  </g>
+  
+  <g transform="translate(250, 300)">
+    <rect x="0" y="0" width="55" height="22" fill="#F1C40F"/>
+    <circle cx="8" cy="26" r="4" fill="#2C3E50"/>
+    <circle cx="47" cy="26" r="4" fill="#2C3E50"/>
+    <rect x="5" y="3" width="45" height="16" fill="#F39C12"/>
+    <rect x="20" y="-4" width="15" height="6" fill="#F1C40F"/>
+    <text x="27" y="11" text-anchor="middle" fill="#2C3E50" font-family="Arial" font-size="6" font-weight="bold">TAXI</text>
+  </g>
+  
+  <!-- Traffic cars - Lane 2 -->
+  <g transform="translate(380, 340)">
+    <rect x="0" y="0" width="55" height="22" fill="#9B59B6"/>
+    <circle cx="8" cy="26" r="4" fill="#2C3E50"/>
+    <circle cx="47" cy="26" r="4" fill="#2C3E50"/>
+    <rect x="5" y="3" width="45" height="16" fill="#8E44AD"/>
+  </g>
+  
+  <g transform="translate(480, 340)">
+    <rect x="0" y="0" width="55" height="22" fill="#2C3E50"/>
+    <circle cx="8" cy="26" r="4" fill="#2C3E50"/>
+    <circle cx="47" cy="26" r="4" fill="#2C3E50"/>
+    <rect x="5" y="3" width="45" height="16" fill="#34495E"/>
+    <rect x="20" y="-4" width="15" height="6" fill="#2C3E50"/>
+    <text x="27" y="11" text-anchor="middle" fill="#F1C40F" font-family="Arial" font-size="6" font-weight="bold">TAXI</text>
+  </g>
+  
+  <g transform="translate(580, 340)">
+    <rect x="0" y="0" width="55" height="22" fill="#E67E22"/>
+    <circle cx="8" cy="26" r="4" fill="#2C3E50"/>
+    <circle cx="47" cy="26" r="4" fill="#2C3E50"/>
+    <rect x="5" y="3" width="45" height="16" fill="#D35400"/>
+  </g>
+  
+  <!-- Traffic lights -->
+  <rect x="320" y="260" width="8" height="20" fill="#34495E"/>
+  <circle cx="324" y="265" r="3" fill="#E74C3C"/>
+  <circle cx="324" y="270" r="3" fill="#F39C12"/>
+  <circle cx="324" y="275" r="3" fill="#27AE60"/>
+  
+  <!-- Street signs -->
+  <rect x="680" y="240" width="4" height="40" fill="#34495E"/>
+  <rect x="670" y="235" width="24" height="12" fill="#3498DB"/>
+  <text x="682" y="243" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">MAIN ST</text>
+  
+  <!-- Buildings windows -->
+  <rect x="20" y="140" width="12" height="12" fill="#F39C12"/>
+  <rect x="40" y="140" width="12" height="12" fill="#F39C12"/>
+  <rect x="60" y="140" width="12" height="12" fill="#F39C12"/>
+  <rect x="80" y="140" width="12" height="12" fill="#F39C12"/>
+  
+  <rect x="20" y="170" width="12" height="12" fill="#F39C12"/>
+  <rect x="40" y="170" width="12" height="12" fill="#F39C12"/>
+  <rect x="60" y="170" width="12" height="12" fill="#F39C12"/>
+  <rect x="80" y="170" width="12" height="12" fill="#F39C12"/>
+  
+  <!-- Pedestrian crossing -->
+  <rect x="300" y="280" width="200" height="8" fill="white" opacity="0.8"/>
+  <rect x="300" y="292" width="200" height="8" fill="white" opacity="0.8"/>
+  <rect x="300" y="304" width="200" height="8" fill="white" opacity="0.8"/>
+  <rect x="300" y="316" width="200" height="8" fill="white" opacity="0.8"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#2C3E50" font-family="Arial" font-size="24" font-weight="bold">Urban Traffic Management</text>
+  <text x="400" y="55" text-anchor="middle" fill="#34495E" font-family="Arial" font-size="16">Real-time City Transportation</text>
+</svg>

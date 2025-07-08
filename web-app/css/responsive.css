@@ -1,0 +1,572 @@
+/* Responsive CSS - Mobile and tablet optimizations */
+
+/* Mobile First Approach */
+@media (max-width: 480px) {
+  /* Base Layout */
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+      "header"
+      "main";
+  }
+  
+  .dashboard-sidebar {
+    display: none;
+  }
+  
+  /* Header Adjustments */
+  .dashboard-header {
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .header-left {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .page-title {
+    display: none;
+  }
+  
+  .header-right {
+    gap: 0.5rem;
+  }
+  
+  .user-info {
+    display: none;
+  }
+  
+  .user-avatar {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* Main Content */
+  .dashboard-main {
+    padding: 1rem;
+  }
+  
+  /* Statistics Cards */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .stat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  /* Charts */
+  .charts-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .chart-card {
+    padding: 1rem;
+  }
+  
+  .chart-placeholder {
+    height: 200px;
+    font-size: 0.75rem;
+  }
+  
+  .chart-controls {
+    flex-wrap: wrap;
+  }
+  
+  .chart-btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  /* Activity Card */
+  .activity-card {
+    padding: 1rem;
+  }
+  
+  .activity-item {
+    padding: 0.5rem;
+  }
+  
+  .activity-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+  
+  /* Quick Actions */
+  .quick-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .quick-action {
+    padding: 0.75rem;
+    justify-content: center;
+  }
+  
+  /* Mobile Navigation */
+  .mobile-nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--text-dark);
+  }
+  
+  .mobile-nav-toggle:hover {
+    background-color: var(--background-gray);
+  }
+  
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--card-white);
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    box-shadow: var(--shadow-lg);
+    overflow-y: auto;
+  }
+  
+  .mobile-sidebar.open {
+    left: 0;
+  }
+  
+  .mobile-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+  
+  .mobile-sidebar-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+  }
+  
+  .mobile-sidebar-close:hover {
+    color: var(--text-dark);
+    background-color: var(--background-gray);
+  }
+  
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+  }
+  
+  .mobile-overlay.active {
+    display: block;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 481px) and (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+      "header"
+      "main";
+  }
+  
+  .dashboard-sidebar {
+    display: none;
+  }
+  
+  .dashboard-main {
+    padding: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-actions {
+    flex-wrap: wrap;
+  }
+  
+  .chart-placeholder {
+    height: 250px;
+  }
+  
+  .mobile-nav-toggle {
+    display: block;
+  }
+  
+  .mobile-sidebar {
+    width: 300px;
+  }
+}
+
+/* Small Desktop / Large Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: 200px 1fr;
+  }
+  
+  .dashboard-sidebar {
+    padding: 1rem 0;
+  }
+  
+  .nav-item {
+    padding: 0.625rem 1rem;
+  }
+  
+  .nav-text {
+    font-size: 0.8125rem;
+  }
+  
+  .dashboard-main {
+    padding: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .dashboard-container {
+    grid-template-columns: 250px 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .charts-section {
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1441px) {
+  .dashboard-container {
+    grid-template-columns: 280px 1fr;
+  }
+  
+  .dashboard-main {
+    padding: 2.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .charts-section {
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+  }
+  
+  .stat-card {
+    padding: 2rem;
+  }
+  
+  .chart-card {
+    padding: 2rem;
+  }
+  
+  .activity-card {
+    padding: 2rem;
+  }
+  
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .dashboard-sidebar,
+  .mobile-nav-toggle,
+  .notification-bell,
+  .quick-actions,
+  .chart-controls {
+    display: none !important;
+  }
+  
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "header"
+      "main";
+  }
+  
+  .dashboard-header {
+    background-color: white !important;
+    color: black !important;
+    border-bottom: 2px solid black;
+  }
+  
+  .dashboard-main {
+    padding: 1rem;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .stat-card {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .chart-placeholder {
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+  }
+  
+  .activity-item {
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-icon,
+  .stat-icon,
+  .activity-icon,
+  .nav-icon {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hover-lift:hover {
+    transform: none;
+  }
+  
+  .hover-scale:hover {
+    transform: none;
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+  
+  .stat-card:hover {
+    transform: none;
+  }
+  
+  .quick-action:hover {
+    transform: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-gray: #111827;
+    --card-white: #1f2937;
+    --text-dark: #f9fafb;
+    --text-light: #9ca3af;
+    --border-light: #374151;
+  }
+  
+  .dashboard-header {
+    background-color: var(--card-white);
+    border-bottom-color: var(--border-light);
+  }
+  
+  .dashboard-sidebar {
+    background-color: var(--card-white);
+    border-right-color: var(--border-light);
+  }
+  
+  .data-table th {
+    background-color: var(--background-gray);
+  }
+  
+  .data-table tr:hover {
+    background-color: var(--background-gray);
+  }
+  
+  .form-input,
+  .form-select,
+  .form-textarea {
+    background-color: var(--card-white);
+    border-color: var(--border-light);
+    color: var(--text-dark);
+  }
+  
+  .chart-placeholder {
+    background-color: var(--background-gray);
+    border-color: var(--border-light);
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-contrast: high) {
+  :root {
+    --border-light: #000000;
+    --text-light: #000000;
+  }
+  
+  .card {
+    border: 1px solid var(--border-light);
+  }
+  
+  .btn-outline {
+    border-color: var(--text-dark);
+  }
+  
+  .nav-item {
+    border: 1px solid transparent;
+  }
+  
+  .nav-item:hover {
+    border-color: var(--primary-blue);
+  }
+}
+
+/* Landscape Orientation on Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .dashboard-header {
+    padding: 0.5rem 1rem;
+  }
+  
+  .dashboard-main {
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .chart-placeholder {
+    height: 150px;
+  }
+  
+  .mobile-sidebar {
+    width: 250px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .nav-item {
+    padding: 1rem 1.5rem;
+  }
+  
+  .quick-action {
+    padding: 1rem;
+  }
+  
+  .chart-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .activity-item {
+    padding: 1rem;
+  }
+  
+  .form-input,
+  .form-select,
+  .form-textarea {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .notification-bell {
+    padding: 0.75rem;
+  }
+  
+  .user-profile {
+    padding: 0.75rem;
+  }
+}
+
+/* Hover Device Optimizations */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .quick-action:hover {
+    transform: translateY(-1px);
+  }
+}
