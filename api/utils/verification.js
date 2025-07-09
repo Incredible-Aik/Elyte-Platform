@@ -16,12 +16,21 @@ const emailConfig = {
 };
 
 // SMS configuration (Twilio)
-const twilioClient = twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
+let twilioClient = null;
+let twilioPhoneNumber = null;
 
-const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
+if (process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN) {
+  try {
+    twilioClient = twilio(
+      process.env.TWILIO_ACCOUNT_SID,
+      process.env.TWILIO_AUTH_TOKEN
+    );
+    twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
+  } catch (error) {
+    console.warn('Twilio configuration error:', error.message);
+    twilioClient = null;
+  }
+}
 
 /**
  * Send verification email
@@ -121,7 +130,7 @@ async function sendVerificationEmail(options) {
 async function sendVerificationSMS(options) {
   const { phoneNumber, firstName, verificationCode, type = 'sms_verification' } = options;
   
-  if (!process.env.TWILIO_ACCOUNT_SID || !process.env.TWILIO_AUTH_TOKEN) {
+  if (!twilioClient || !process.env.TWILIO_ACCOUNT_SID || !process.env.TWILIO_AUTH_TOKEN) {
     console.warn('Twilio credentials not configured. SMS not sent.');
     return false;
   }

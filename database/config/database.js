@@ -10,9 +10,6 @@ const dbConfig = {
   database: process.env.DB_NAME || 'elyte_platform',
   charset: 'utf8mb4',
   timezone: '+00:00',
-  acquireTimeout: 60000,
-  timeout: 60000,
-  reconnect: true,
   connectionLimit: 10,
   queueLimit: 0,
   ssl: process.env.NODE_ENV === 'production' ? {
