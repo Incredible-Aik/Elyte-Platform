@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Registration - Elyte Platform</title>
+    <link rel="stylesheet" href="../css/signup-forms.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-header">
+            <h1>Driver Registration</h1>
+            <p>Join the Elyte Platform as a professional driver</p>
+        </div>
+
+        <form id="driverSignupForm" class="signup-form" enctype="multipart/form-data">
+            <!-- Personal Information Section -->
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <div class="phone-input">
+                        <select id="phonePrefix" name="phonePrefix">
+                            <option value="+233">+233 (Ghana)</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" placeholder="XXXXXXXXX" required>
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateOfBirth">Date of Birth *</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="profilePhoto">Profile Photo *</label>
+                    <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" required>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Address Information -->
+            <div class="form-section">
+                <h2>Address Information</h2>
+                
+                <div class="form-group">
+                    <label for="street">Street Address *</label>
+                    <input type="text" id="street" name="street" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City *</label>
+                    <select id="city" name="city" required>
+                        <option value="">Select City</option>
+                        <option value="Accra">Accra</option>
+                        <option value="Kumasi">Kumasi</option>
+                        <option value="Tamale">Tamale</option>
+                        <option value="Takoradi">Takoradi</option>
+                        <option value="Cape Coast">Cape Coast</option>
+                        <option value="Tema">Tema</option>
+                        <option value="Ho">Ho</option>
+                        <option value="Koforidua">Koforidua</option>
+                        <option value="Sunyani">Sunyani</option>
+                        <option value="Wa">Wa</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="region">Region *</label>
+                    <select id="region" name="region" required>
+                        <option value="">Select Region</option>
+                        <option value="Greater Accra">Greater Accra</option>
+                        <option value="Ashanti">Ashanti</option>
+                        <option value="Northern">Northern</option>
+                        <option value="Western">Western</option>
+                        <option value="Central">Central</option>
+                        <option value="Eastern">Eastern</option>
+                        <option value="Volta">Volta</option>
+                        <option value="Brong Ahafo">Brong Ahafo</option>
+                        <option value="Upper East">Upper East</option>
+                        <option value="Upper West">Upper West</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Driver's License Information -->
+            <div class="form-section">
+                <h2>Driver's License Information</h2>
+                
+                <div class="form-group">
+                    <label for="licenseNumber">License Number *</label>
+                    <input type="text" id="licenseNumber" name="licenseNumber" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="licenseClass">License Class *</label>
+                    <select id="licenseClass" name="licenseClass" required>
+                        <option value="">Select License Class</option>
+                        <option value="A">Class A - Motorcycle</option>
+                        <option value="B">Class B - Private Car</option>
+                        <option value="C">Class C - Commercial Vehicle</option>
+                        <option value="D">Class D - Bus/Passenger Vehicle</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="licenseExpiry">License Expiry Date *</label>
+                    <input type="date" id="licenseExpiry" name="licenseExpiry" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="licenseCopy">License Copy (PDF/Image) *</label>
+                    <input type="file" id="licenseCopy" name="licenseCopy" accept=".pdf,image/*" required>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Vehicle Information -->
+            <div class="form-section">
+                <h2>Vehicle Information</h2>
+                
+                <div class="form-group">
+                    <label for="vehicleMake">Vehicle Make *</label>
+                    <input type="text" id="vehicleMake" name="vehicleMake" placeholder="e.g., Toyota, Honda" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicleModel">Vehicle Model *</label>
+                    <input type="text" id="vehicleModel" name="vehicleModel" placeholder="e.g., Corolla, Civic" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicleYear">Vehicle Year *</label>
+                    <input type="number" id="vehicleYear" name="vehicleYear" min="2000" max="2024" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="licensePlate">License Plate Number *</label>
+                    <input type="text" id="licensePlate" name="licensePlate" placeholder="GR-XXXX-XX" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicleColor">Vehicle Color *</label>
+                    <input type="text" id="vehicleColor" name="vehicleColor" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehiclePhotos">Vehicle Photos (Front, Back, Interior) *</label>
+                    <input type="file" id="vehiclePhotos" name="vehiclePhotos" accept="image/*" multiple required>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Insurance Information -->
+            <div class="form-section">
+                <h2>Insurance Information</h2>
+                
+                <div class="form-group">
+                    <label for="insuranceProvider">Insurance Provider *</label>
+                    <input type="text" id="insuranceProvider" name="insuranceProvider" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="insurancePolicy">Policy Number *</label>
+                    <input type="text" id="insurancePolicy" name="insurancePolicy" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="insuranceExpiry">Insurance Expiry Date *</label>
+                    <input type="date" id="insuranceExpiry" name="insuranceExpiry" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="insuranceDocument">Insurance Document *</label>
+                    <input type="file" id="insuranceDocument" name="insuranceDocument" accept=".pdf,image/*" required>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Mobile Money Information -->
+            <div class="form-section">
+                <h2>Mobile Money Information</h2>
+                
+                <div class="form-group">
+                    <label for="mobileMoneyProvider">Mobile Money Provider *</label>
+                    <select id="mobileMoneyProvider" name="mobileMoneyProvider" required>
+                        <option value="">Select Provider</option>
+                        <option value="MTN">MTN Mobile Money</option>
+                        <option value="Vodafone">Vodafone Cash</option>
+                        <option value="AirtelTigo">AirtelTigo Money</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobileMoneyNumber">Mobile Money Number *</label>
+                    <input type="tel" id="mobileMoneyNumber" name="mobileMoneyNumber" placeholder="0XXXXXXXXX" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="accountName">Account Name *</label>
+                    <input type="text" id="accountName" name="accountName" required>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Emergency Contact -->
+            <div class="form-section">
+                <h2>Emergency Contact</h2>
+                
+                <div class="form-group">
+                    <label for="emergencyContactName">Contact Name *</label>
+                    <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="emergencyContactPhone">Contact Phone *</label>
+                    <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="emergencyContactRelationship">Relationship *</label>
+                    <select id="emergencyContactRelationship" name="emergencyContactRelationship" required>
+                        <option value="">Select Relationship</option>
+                        <option value="Parent">Parent</option>
+                        <option value="Spouse">Spouse</option>
+                        <option value="Sibling">Sibling</option>
+                        <option value="Friend">Friend</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Work Availability -->
+            <div class="form-section">
+                <h2>Work Availability</h2>
+                
+                <div class="form-group">
+                    <label>Preferred Working Days *</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="workingDays" value="Monday"> Monday</label>
+                        <label><input type="checkbox" name="workingDays" value="Tuesday"> Tuesday</label>
+                        <label><input type="checkbox" name="workingDays" value="Wednesday"> Wednesday</label>
+                        <label><input type="checkbox" name="workingDays" value="Thursday"> Thursday</label>
+                        <label><input type="checkbox" name="workingDays" value="Friday"> Friday</label>
+                        <label><input type="checkbox" name="workingDays" value="Saturday"> Saturday</label>
+                        <label><input type="checkbox" name="workingDays" value="Sunday"> Sunday</label>
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="workingHoursStart">Start Time *</label>
+                    <input type="time" id="workingHoursStart" name="workingHoursStart" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="workingHoursEnd">End Time *</label>
+                    <input type="time" id="workingHoursEnd" name="workingHoursEnd" required>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Consent and Agreements -->
+            <div class="form-section">
+                <h2>Consent and Agreements</h2>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="backgroundCheck" name="backgroundCheck" required>
+                        I consent to a background check and verification process *
+                    </label>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="termsConditions" name="termsConditions" required>
+                        I agree to the <a href="#" target="_blank">Terms and Conditions</a> *
+                    </label>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                        I agree to the <a href="#" target="_blank">Privacy Policy</a> *
+                    </label>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Register as Driver</button>
+                <button type="button" class="cancel-btn" onclick="window.location.href='/'">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/driver-signup.js"></script>
+</body>
+</html>

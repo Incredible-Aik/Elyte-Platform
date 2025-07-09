@@ -1,0 +1,467 @@
+/* Elyte Platform Signup Forms Stylesheet */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+/* Container Styles */
+.signup-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header Styles */
+.signup-header {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.signup-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.signup-header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Form Styles */
+.signup-form {
+    padding: 40px 30px;
+}
+
+.form-section {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.form-section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    font-weight: 500;
+    position: relative;
+    padding-left: 20px;
+}
+
+.form-section h2:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group label.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.form-group label.checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Input Styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input[type="file"] {
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px dashed #e0e0e0;
+    cursor: pointer;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #667eea;
+    background-color: #f8f9ff;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Phone Input Styles */
+.phone-input {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-input select {
+    flex: 0 0 120px;
+}
+
+.phone-input input {
+    flex: 1;
+}
+
+/* Checkbox Group Styles */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.checkbox-group label:hover {
+    background-color: #f0f0f0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+    transform: scale(1.2);
+}
+
+/* Error Message Styles */
+.error-message {
+    display: block;
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #e74c3c;
+    background-color: #fdf2f2;
+}
+
+/* Success State */
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+    border-color: #27ae60;
+    background-color: #f2fdf6;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.submit-btn,
+.cancel-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-width: 150px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6b4190);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.cancel-btn {
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 2px solid #dee2e6;
+}
+
+.cancel-btn:hover {
+    background: #e9ecef;
+    color: #495057;
+    transform: translateY(-2px);
+}
+
+/* Links */
+a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Loading State */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Ghana-specific styling */
+.ghana-flag {
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    background: linear-gradient(to bottom, #ce1126 33%, #fcd116 33%, #fcd116 66%, #006b3f 66%);
+    border-radius: 2px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Mobile Money Provider Icons */
+.provider-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.provider-icon.mtn {
+    background: #ffcc00;
+}
+
+.provider-icon.vodafone {
+    background: #e60000;
+}
+
+.provider-icon.airteltigo {
+    background: #ff6600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .signup-container {
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .signup-header {
+        padding: 30px 20px;
+    }
+    
+    .signup-header h1 {
+        font-size: 2em;
+    }
+    
+    .signup-form {
+        padding: 30px 20px;
+    }
+    
+    .form-section h2 {
+        font-size: 1.2em;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .submit-btn,
+    .cancel-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .phone-input {
+        flex-direction: column;
+    }
+    
+    .phone-input select {
+        flex: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-header {
+        padding: 20px 15px;
+    }
+    
+    .signup-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .signup-form {
+        padding: 20px 15px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .signup-container {
+        box-shadow: none;
+        margin: 0;
+    }
+    
+    .signup-header {
+        background: white;
+        color: black;
+    }
+    
+    .form-actions {
+        display: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        border-width: 3px;
+    }
+    
+    .submit-btn {
+        background: #000;
+    }
+    
+    .cancel-btn {
+        border-width: 3px;
+        border-color: #000;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
