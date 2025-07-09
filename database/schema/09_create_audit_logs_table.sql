@@ -1,0 +1,35 @@
+-- Audit Logs Table
+-- Stores security and activity logging for compliance and monitoring
+CREATE TABLE IF NOT EXISTS audit_logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT DEFAULT NULL,
+    action VARCHAR(100) NOT NULL,
+    entity_type VARCHAR(50) NOT NULL,
+    entity_id INT DEFAULT NULL,
+    old_values JSON DEFAULT NULL,
+    new_values JSON DEFAULT NULL,
+    ip_address VARCHAR(45) NOT NULL,
+    user_agent TEXT DEFAULT NULL,
+    request_method VARCHAR(10) DEFAULT NULL,
+    request_url VARCHAR(500) DEFAULT NULL,
+    request_body JSON DEFAULT NULL,
+    response_status INT DEFAULT NULL,
+    severity ENUM('low', 'medium', 'high', 'critical') DEFAULT 'low',
+    category ENUM('authentication', 'authorization', 'data_change', 'system', 'security') NOT NULL,
+    success BOOLEAN DEFAULT TRUE,
+    error_message TEXT DEFAULT NULL,
+    session_id VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL,
+    INDEX idx_user_id (user_id),
+    INDEX idx_action (action),
+    INDEX idx_entity (entity_type, entity_id),
+    INDEX idx_ip_address (ip_address),
+    INDEX idx_severity (severity),
+    INDEX idx_category (category),
+    INDEX idx_success (success),
+    INDEX idx_session_id (session_id),
+    INDEX idx_created_at (created_at),
+    INDEX idx_security_monitoring (category, severity, success, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
